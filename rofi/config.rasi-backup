@@ -1,0 +1,9 @@
+configuration {
+	modes: "drun,window,run,ssh,combi,windowcd,keys,filebrowser";
+	show-icons: true;
+	steal-focus: false;
+	filebrowser {
+		directories-first: true;
+		sorting-method: "name";	
+	}
+}
