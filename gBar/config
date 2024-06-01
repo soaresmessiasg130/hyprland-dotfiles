@@ -23,14 +23,14 @@ ForceCSS: false
 # Adding the same widget multiple times to the layout is *not* supported and will cause issues.
 
 # Widgets to show on the left side
-WidgetsLeft: [Workspaces]
+WidgetsLeft: [Power, Workspaces]
 # Widgets to center
 WidgetsCenter: [Time]
 # Widgets to display on the right side
-WidgetsRight: [Tray, Packages, Audio, Bluetooth, Network, Disk, VRAM, GPU, RAM, CPU, Battery, Power]
+WidgetsRight: [Tray, Packages, Audio, Bluetooth, Network, Disk, VRAM, GPU, RAM, CPU, Battery]
 
 # The CPU sensor to use
-CPUThermalZone: /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input
+CPUThermalZone: /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
 
 # The card to poll when using AMDGPU. If you don't have an AMD card, you can skip this config.
 # Possible values can be found by querying /sys/class/drm
@@ -162,7 +162,8 @@ CheckUpdateInterval: 300
 # AudioMaxVolume: 120 # Audio can't get above 120%
 
 # The network adapter to use. You can query /sys/class/net for all possible values
-NetworkAdapter: eno1
+# NetworkAdapter: eno1
+NetworkAdapter: enp34s0
 
 # Disables the network widget when set to false
 NetworkWidget: true
@@ -174,7 +175,7 @@ SensorTooltips: false
 SensorSize: 24
 
 # The size of the network icon
-NetworkIconSize: 24
+NetworkIconSize: 20
 
 # Enables tray icons
 EnableSNI: true

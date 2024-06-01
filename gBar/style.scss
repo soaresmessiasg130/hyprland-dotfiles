@@ -2,7 +2,9 @@
 // See https://github.com/dracula/dracula-theme/blob/master/LICENSE or dracula/LICENSE for the license
 $bg: #282a36;
 $fg: #f8f8f2;
+
 $inactive: #44475a;
+
 $darkblue: #6272a4;
 $cyan: #8be9fd;
 $green: #50fa7b;
@@ -11,15 +13,14 @@ $pink: #ff79c6;
 $purple: #bd93f9;
 $red: #ff5555;
 $yellow: #f1fa8c;
-
-
 $btblue: #1793D1;
 
-$textsize: 16px;
+$textsize: 12px;
+$iconsize: 26px;
 
 *{
     all: unset;
-    font-family: "CaskaydiaCove NF";
+    font-family: "JetBrainsMono";
 }
 
 .popup {
@@ -34,16 +35,17 @@ menu {
 
 // debug
 .cpu-box{
-    //background-color: #00cc00
+    background-color: #00cc00
 }
 
-.bar,tooltip{
+.bar, tooltip {
     background-color: $bg;
-    border-radius: 16px;
+    border-radius: 8px;
+    margin: 8px 8px 0px 8px;
 }
 
 .right {
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 .time-text {
@@ -55,37 +57,33 @@ menu {
 }
 
 .reboot-button {
-    font-size: 28px;
-    
+    font-size: $iconsize;
     color: $darkblue;
 }
+
 .sleep-button {
-    font-size: 28px;
-
+    font-size: $iconsize;
     color: $darkblue;
 }
+
 .lock-button {
-    font-size: 22px;
-
+    font-size: $iconsize;
     color: $darkblue;
 }
-.exit-button {
-    font-size: 28px;
 
+.exit-button {
+    font-size: $iconsize;
     color: $darkblue;
 }
 
 .power-button {
-    font-size: 25px;
-
+    font-size: $iconsize;
     color: $red;
 }
 
-.power-box {
-}
+.power-box { }
 
-.power-box-expand {
-}
+.power-box-expand { }
 
 .system-confirm {
     color: $green;
@@ -124,7 +122,7 @@ highlight {
 }
 
 .audio-icon {
-    font-size: 24px;
+    font-size: $iconsize;
     color: $orange;
 }
 
@@ -146,7 +144,7 @@ highlight {
 }
 
 .mic-icon {
-    font-size: 24px;
+    font-size: $iconsize;
     color: $purple;
     // margin-right: 0px;
 }
@@ -170,7 +168,7 @@ highlight {
 
 .package-outofdate {
     margin: -5px -5px -5px -5px;
-    font-size: 24px;
+    font-size: $iconsize;
     color: $red;
 }
 
@@ -405,9 +403,10 @@ highlight {
     color: $red;
     background-color: $inactive;
     border-radius: 16px;
-	padding: 0px 8px 0px 7px;
-	margin: 0px 0px 0px 8px;
+    padding: 0px 8px 0px 7px;
+    margin: 0px 0px 0px 8px;
 }
+
 .bt-scan {
     &.active {
         animation-name: scanonanim;
@@ -425,6 +424,6 @@ highlight {
     background-color: $inactive;
     border-radius: 16px;
     padding: 2px 11px 0px 7px;
-	margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 10px;
     font-size: 18px;
 }
