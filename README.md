@@ -3,16 +3,22 @@ dotfiles
 
 https://wiki.hyprland.org/Useful-Utilities/Must-have/
 
+https://github.com/hyprland-community/awesome-hyprland
 
 https://github.com/ErikReider/SwayNotificationCenter
 
-```yay -S swaync```
+``` bash
+yay -S swaync
 
-https://github.com/davatorium/rofi
+yay -S rofi
 
-```yay -S rofi```
+yay -S gbar-git
 
-```ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr```
-```ln -s $HOME/hyprland-dotfiles/rofi $HOME/.config/rofi```
-```ln -s $HOME/hyprland-dotfiles/fonts $HOME/.local/share/fonts```
+ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
+ln -s $HOME/hyprland-dotfiles/rofi $HOME/.config/rofi
+
+ln -s $HOME/hyprland-dotfiles/gBar $HOME/.config/gBar
+
+ln -s $HOME/hyprland-dotfiles/fonts $HOME/.local/share/fonts
+```
