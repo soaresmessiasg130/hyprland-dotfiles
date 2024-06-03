@@ -2,9 +2,7 @@
 // See https://github.com/dracula/dracula-theme/blob/master/LICENSE or dracula/LICENSE for the license
 $bg: #282a36;
 $fg: #f8f8f2;
-
 $inactive: #44475a;
-
 $darkblue: #6272a4;
 $cyan: #8be9fd;
 $green: #50fa7b;
@@ -17,16 +15,19 @@ $btblue: #1793D1;
 
 $textsize: 12px;
 $iconsize: 26px;
+$iconsizesmall: 22px;
+$borderradius: 8px;
 
 *{
     all: unset;
     font-family: "JetBrainsMono";
+    font-weight: bold;
 }
 
 .popup {
     background-color: $bg;
     color: #50fa7b;
-    border-radius: 16px;
+    border-radius: $borderradius;
 }
 
 menu {
@@ -34,9 +35,9 @@ menu {
 }
 
 // debug
-.cpu-box{
-    background-color: #00cc00
-}
+// .cpu-box{
+//     background-color: #00cc00;
+// }
 
 .bar, tooltip {
     background-color: $bg;
@@ -139,14 +140,13 @@ highlight {
         background-color: $orange;
     }
 
-    font-size: 16px;
+    font-size: $textsize;
     color: $orange;
 }
 
 .mic-icon {
     font-size: $iconsize;
     color: $purple;
-    // margin-right: 0px;
 }
 
 .mic-volume {
@@ -162,7 +162,7 @@ highlight {
         background-color: $purple;
     }
 
-    font-size: 16px;
+    font-size: $textsize;
     color: $purple;
 }
 
@@ -176,14 +176,17 @@ highlight {
     font-size: $textsize;
     color: $btblue;
 }
+
 .bt-label-on {
     font-size: 20px;
     color: $btblue;
 }
+
 .bt-label-off {
     font-size: 24px;
     color: $btblue;
 }
+
 .bt-label-connected {
     font-size: 28px;
     color: $btblue;
@@ -193,6 +196,7 @@ highlight {
     color: $purple;
     font-size: $textsize;
 }
+
 .disk-util-progress {
     background-color: $inactive;
 }
@@ -201,6 +205,7 @@ highlight {
     color: $orange;
     font-size: $textsize;
 }
+
 .vram-util-progress {
     background-color: $inactive;
 }
@@ -209,6 +214,7 @@ highlight {
     color: $yellow;
     font-size: $textsize;
 }
+
 .ram-util-progress {
     background-color: $inactive;
 }
@@ -217,6 +223,7 @@ highlight {
     color: $cyan;
     font-size: $textsize;
 }
+
 .gpu-util-progress {
     background-color: $inactive;
 }
@@ -225,6 +232,7 @@ highlight {
     color: $green;
     font-size: $textsize;
 }
+
 .cpu-util-progress {
     background-color: $inactive;
 }
@@ -233,6 +241,7 @@ highlight {
     color: $pink;
     font-size: $textsize;
 }
+
 .battery-util-progress {
     background-color: $inactive;
 }
@@ -300,25 +309,30 @@ highlight {
     color: $red;
 }
 
+// Workspaces
 .ws-dead {
     color: $inactive;
-    font-size: 14px;
+    font-size: $iconsizesmall;
 }
+
 .ws-inactive {
     color: $darkblue;
-    font-size: 14px;
+    font-size: $iconsizesmall;
 }
+
 .ws-visible {
     color: $cyan;
-    font-size: 14px;
+    font-size: $iconsizesmall;
 }
+
 .ws-current {
     color: $yellow;
-    font-size: 14px;
+    font-size: $iconsizesmall;
 }
+
 .ws-active {
     color: $green;
-    font-size: 14px;
+    font-size: $iconsizesmall;
 }
 
 // Bluetooth Widget
@@ -347,6 +361,7 @@ highlight {
         color: $green;
     }
 }
+
 @keyframes scanoffanim {
     from {
         color: $green;
@@ -360,6 +375,7 @@ highlight {
     background-color: $bg;
     border-radius: 16px;
 }
+
 .bt-header-box {
     margin-top: 4px;
     margin-right: 8px;
@@ -367,10 +383,12 @@ highlight {
     font-size: 24px;
     color: $btblue;
 } 
+
 .bt-body-box {
     margin-right: 8px;
     margin-left: 8px;
 }
+
 .bt-button {
     &.active {
         animation-name: connectanim;
@@ -399,6 +417,7 @@ highlight {
     font-size: 16px;
     // color: $green;
 }
+
 .bt-close {
     color: $red;
     background-color: $inactive;
