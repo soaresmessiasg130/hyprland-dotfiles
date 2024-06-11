@@ -14,6 +14,8 @@ yay -S rofi
 
 yay -S gbar-git
 
+yay -S bibata-cursor-theme
+
 ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
 ln -s $HOME/hyprland-dotfiles/rofi $HOME/.config/rofi

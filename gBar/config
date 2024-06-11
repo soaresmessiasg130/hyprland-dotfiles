@@ -23,9 +23,9 @@ ForceCSS: false
 # Adding the same widget multiple times to the layout is *not* supported and will cause issues.
 
 # Widgets to show on the left side
-WidgetsLeft: [Workspaces]
+WidgetsLeft: [Title]
 # Widgets to center
-WidgetsCenter: [Title]
+WidgetsCenter: [Workspaces]
 # Widgets to display on the right side
 WidgetsRight: [Tray, Audio, Update, Network, CPU, RAM, Disk, Time, Power]
 
@@ -59,10 +59,17 @@ DiskPartition: /
 
 # Overrides the icon of the nth (in this case the first) workspace.
 # Please note the missing space between "," and the symbol. Adding a space here adds it to the bar too!
-# WorkspaceSymbol: 1,
+WorkspaceSymbol: 1,󰎤
+WorkspaceSymbol: 2,󰎧
+WorkspaceSymbol: 3,󰎪
+WorkspaceSymbol: 4,󰎭
+WorkspaceSymbol: 5,󰎱
+WorkspaceSymbol: 6,󰎳
+WorkspaceSymbol: 7,󰎶
+WorkspaceSymbol: 8,󰎹
 
 # The default symbol for the workspaces
-DefaultWorkspaceSymbol: 
+DefaultWorkspaceSymbol: 󱓻
 
 # All of the icons that can be modified.
 # Please note that some icons require a space ("\s") (e.g. default ShutdownIcon)
@@ -92,7 +99,7 @@ WorkspaceScrollOnMonitor: true
 WorkspaceScrollInvert: false
 
 # Number of workspaces to display. Displayed workspace IDs are 1-n (Default: 1-9)
-NumWorkspaces: 10
+NumWorkspaces: 8
 
 # Use Hyprland IPC instead of the ext_workspace protocol for workspace polling.
 # Hyprland IPC is *slightly* less performant (+0.1% one core), but way less bug prone,
