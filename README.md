@@ -7,12 +7,20 @@ https://github.com/hyprland-community/awesome-hyprland
 
 https://github.com/ErikReider/SwayNotificationCenter
 
+https://github.com/JaKooLit/Wallpaper-Bank.git
+
 ``` bash
 yay -S swaync
 
 yay -S rofi
 
 yay -S gbar-git
+
+yay -S bibata-cursor-theme
+
+yay -S waypaper-engine
+
+yay -S piper
 
 ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
