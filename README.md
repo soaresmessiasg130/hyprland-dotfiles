@@ -22,6 +22,14 @@ yay -S waypaper-engine
 
 yay -S piper
 
+yay -S grim
+
+yay -S slurp
+
+yay -S wl-clipboard
+
+yay -S nautilus
+
 ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
 ln -s $HOME/hyprland-dotfiles/rofi $HOME/.config/rofi
