@@ -16,6 +16,7 @@ $btblue: #1793D1;
 $textsize: 12px;
 $iconsize: 26px;
 $iconsizesmall: 22px;
+$iconsizesmallest: 18px;
 $borderradius: 8px;
 
 *{
@@ -58,33 +59,35 @@ menu {
 }
 
 .reboot-button {
-    font-size: $iconsize;
+    font-size: $iconsizesmall;
     color: $darkblue;
 }
 
 .sleep-button {
-    font-size: $iconsize;
+    font-size: $iconsizesmallest;
     color: $darkblue;
 }
 
 .lock-button {
-    font-size: $iconsize;
+    font-size: $iconsizesmallest;
     color: $darkblue;
 }
 
 .exit-button {
-    font-size: $iconsize;
+    font-size: $iconsizesmall;
     color: $darkblue;
 }
 
 .power-button {
-    font-size: $iconsize;
+    font-size: $iconsizesmall;
     color: $red;
 }
 
 .power-box { }
 
-.power-box-expand { }
+.power-box-expand {
+  padding-right: 0px;
+}
 
 .system-confirm {
     color: $green;
