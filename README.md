@@ -14,6 +14,8 @@ yay -S swaync
 
 yay -S rofi
 
+yay -S glib2-devel
+
 yay -S gbar-git
 
 yay -S bibata-cursor-theme
@@ -29,6 +31,8 @@ yay -S slurp
 yay -S wl-clipboard
 
 yay -S nautilus
+
+yay -S vivaldi
 
 ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
