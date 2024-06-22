@@ -23,11 +23,11 @@ ForceCSS: false
 # Adding the same widget multiple times to the layout is *not* supported and will cause issues.
 
 # Widgets to show on the left side
-WidgetsLeft: [Title]
+WidgetsLeft: [Workspaces, Title]
 # Widgets to center
-WidgetsCenter: [Workspaces]
+WidgetsCenter: [Time]
 # Widgets to display on the right side
-WidgetsRight: [Tray, Audio, Update, Network, CPU, RAM, Disk, Time, Power]
+WidgetsRight: [Tray, Audio, Update, Network, CPU, RAM, Disk, Power]
 
 # The CPU sensor to use
 CPUThermalZone: /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
@@ -133,26 +133,27 @@ CenterWidgets: true
 CenterSpace: 300
 
 # Set datetime style
-DateTimeStyle: %y-%m-%d %H:%M
+# DateTimeStyle: %y-%m-%d %H:%M
+DateTimeStyle: %H:%M
 
 # Set datetime locale (defaults to system locale if not set or set to empty string)
 #DateTimeLocale: de_DE.utf8
 
 # How many characters of the title can be displayed. Note that higher values *will* cause styling issues, especially when it is in the center.
 # If you have the title in the center, consider also increasing "CenterSpace"
-MaxTitleLength: 30
+MaxTitleLength: 50
 
 # Adds a audio input(aka. microphone) widget
 AudioInput: true
 
 # Sets the audio slider to be on reveal (Just like the sensors) when true. Only affects the bar.
-AudioRevealer: false
+AudioRevealer: true
 
 # Sets the rate of change of the slider on each scroll. In Percent
 AudioScrollSpeed: 2
 
 # Display numbers instead of a slider for the two audio widgets. Doesn't affect the audio flyin
-AudioNumbers: true
+AudioNumbers: false
 
 # Command that is run to check if there are out-of-date packages.
 # The script should return *ONLY* a number. If it doesn't output a number, updates are no longer checked.
@@ -165,8 +166,9 @@ CheckUpdateInterval: 300
 
 # Limits the range of the audio slider. Only works for audio output.
 # Slider "empty" is AudioMinVolume, Slider "full" is AudioMaxVolume
-# AudioMinVolume: 30 # Audio can't get below 30%
-# AudioMaxVolume: 120 # Audio can't get above 120%
+Slider: full
+AudioMinVolume: 0
+AudioMaxVolume: 150
 
 # The network adapter to use. You can query /sys/class/net for all possible values
 # NetworkAdapter: eno1
@@ -195,7 +197,7 @@ EnableSNI: true
 # The wildcard filter '*' does not work for SNIIconName and SNIDisabled
 
 # Scale everything down to 25 pixels ('*' as filter means everything)
-SNIIconSize: *, 18
+SNIIconSize: *, 16
 # Explicitly make OBS a bit smaller than default
 #SNIIconSize: OBS, 23
 # Nudges the Discord icon a bit down

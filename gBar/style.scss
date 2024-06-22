@@ -2,8 +2,10 @@
 // See https://github.com/dracula/dracula-theme/blob/master/LICENSE or dracula/LICENSE for the license
 $bg: #282a36;
 $fg: #f8f8f2;
+$active: #33ccff;
 $inactive: #44475a;
-$darkblue: #6272a4;
+$darkblue: #36454f;
+$bluegrey: #708090;
 $cyan: #8be9fd;
 $green: #50fa7b;
 $orange: #ffb86c;
@@ -12,440 +14,480 @@ $purple: #bd93f9;
 $red: #ff5555;
 $yellow: #f1fa8c;
 $btblue: #1793D1;
+$black: #181a26;
 
-$textsize: 12px;
-$iconsize: 26px;
-$iconsizesmall: 22px;
-$iconsizesmallest: 18px;
+$textsizelg: 14px;
+$textsizemd: 12px;
+$textsizesm: 10px;
+
+$iconsizelg: 28px;
+$iconsizemd: 26px;
+$iconsizesm: 22px;
+$iconsizesmx: 20px;
+$iconsizesmxx: 18px;
+
 $borderradius: 8px;
 
-*{
-    all: unset;
-    font-family: "JetBrainsMono";
-    font-weight: bold;
-}
+$xxsmall: 10px;
+$xsmall: 14px;
+$small: 14px;
+$medium: 16px;
+$large: 18px;
+$xlarge: 20px;
 
-.popup {
-    background-color: $bg;
-    color: #50fa7b;
-    border-radius: $borderradius;
+* {
+  all: unset;
+  font-family: "JetBrainsMono";
+  font-weight: bold;
 }
 
 menu {
-    padding: 8px 8px 8px 8px;
+  padding: 8px 8px 8px 8px;
 }
 
-// debug
-// .cpu-box{
-//     background-color: #00cc00;
-// }
-
-.bar, tooltip {
-    background-color: $bg;
-    border-radius: 8px;
-    margin: 8px 8px 0px 8px;
+.bar {
+  background-color: $bg;
+  border-radius: 8px;
+  margin: 8px 8px 0px 8px;
+  border: 2px solid $active;
 }
 
-.right {
-    border-radius: 8px;
+tooltip,
+.popup {
+  background-color: $bg;
+  font-size: $textsizelg;
+  font-weight: bolder;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid $active;
 }
 
 .time-text {
-    font-size: $textsize;
+  font-size: $textsizemd;
 }
 
 .title-text {
-    font-size: $textsize;
+  font-size: $textsizemd;
 }
 
 .reboot-button {
-    font-size: $iconsizesmall;
-    color: $darkblue;
+  font-size: $iconsizemd;
+  color: $bluegrey;
 }
 
 .sleep-button {
-    font-size: $iconsizesmallest;
-    color: $darkblue;
+  font-size: $iconsizesmx;
+  color: $bluegrey;
 }
 
 .lock-button {
-    font-size: $iconsizesmallest;
-    color: $darkblue;
+  font-size: $iconsizesmx;
+  color: $bluegrey;
 }
 
 .exit-button {
-    font-size: $iconsizesmall;
-    color: $darkblue;
+  font-size: $iconsizemd;
+  color: $bluegrey;
 }
 
 .power-button {
-    font-size: $iconsizesmall;
-    color: $red;
+  font-size: $iconsizelg;
+  color: $bluegrey;
 }
 
-.power-box { }
+.power-box {
+  padding: 0px;
+  border-radius: 4px;
+  margin-top: 1px;
+}
 
 .power-box-expand {
   padding-right: 0px;
 }
 
 .system-confirm {
-    color: $green;
+  color: $active;
 }
 
 // Common slider settings
 trough {
-    border-radius: 3px;
-    border-width: 1px;
-    border-style: none;
-    background-color: $inactive;
-    // margin-top: 2px;
-    min-width: 4px;
-    min-height: 4px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: none;
+  background-color: $inactive;
+  min-width: 4px;
+  min-height: 4px;
 }
 
 slider {
-    // Controls the size of the control area (set border-style to solid to see)
-    border-radius: 0%;
-    border-width: 1px;
-    border-style: none;
-    margin: -9px -9px -9px -9px;
-    min-width: 16px;
-    min-height: 16px;
-    background-color: transparent;
+  // Controls the size of the control area (set border-style to solid to see)
+  border-radius: 0%;
+  border-width: 1px;
+  border-style: none;
+  margin: -9px -9px -9px -9px;
+  min-width: $xxsmall;
+  min-height: $xxsmall;
+  background-color: transparent;
 }
 
 highlight {
-    border-radius: 3px;
-    border-width: 1px;
-    border-style: none;
-    // For vertical we need width, for horizontal we need height
-    // Both can coexist though
-    min-width: 6px;
-    min-height: 6px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: none;
+  min-width: 6px;
+  min-height: 6px;
 }
 
 .audio-icon {
-    font-size: $iconsize;
-    color: $orange;
+  font-size: $iconsizemd;
+  color: $active;
 }
 
 .audio-volume {
-    trough {
-        background-color: $inactive;
-    }
+  trough {
+    background-color: $inactive;
+  }
 
-    slider {
-        background-color: transparent;
-    }
+  slider {
+    background-color: transparent;
+  }
 
-    highlight {
-        background-color: $orange;
-    }
+  highlight {
+    background-color: $active;
+  }
 
-    font-size: $textsize;
-    color: $orange;
+  font-size: $iconsizemd;
+  color: $active;
 }
 
 .mic-icon {
-    font-size: $iconsize;
-    color: $purple;
+  font-size: $iconsizesmx;
+  color: $active;
 }
 
 .mic-volume {
-    trough {
-        background-color: $inactive;
-    }
+  trough {
+    background-color: $inactive;
+  }
 
-    slider {
-        background-color: transparent;
-    }
+  slider {
+    background-color: transparent;
+  }
 
-    highlight {
-        background-color: $purple;
-    }
+  highlight {
+    background-color: $active;
+  }
 
-    font-size: $textsize;
-    color: $purple;
+  font-size: $iconsizesmx;
+  color: $active;
 }
 
 .package-outofdate {
-    margin: -5px -5px -5px -5px;
-    font-size: $iconsize;
-    color: $red;
+  margin: -5px -5px -5px -5px;
+  font-size: $textsizemd;
+  font-weight: bold;
+  color: $red;
 }
 
 .bt-num {
-    font-size: $textsize;
-    color: $btblue;
+  font-size: $textsizemd;
+  font-weight: bold;
+  color: $btblue;
 }
 
 .bt-label-on {
-    font-size: 20px;
-    color: $btblue;
+  font-size: 20px;
+  color: $btblue;
 }
 
 .bt-label-off {
-    font-size: 24px;
-    color: $btblue;
+  font-size: 24px;
+  color: $btblue;
 }
 
 .bt-label-connected {
-    font-size: 28px;
-    color: $btblue;
+  font-size: 28px;
+  color: $btblue;
 }
 
 .disk-widget * {
-    color: $purple;
-    font-size: $textsize;
+  color: $active;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 .disk-util-progress {
-    background-color: $inactive;
+  background-color: $bluegrey;
 }
 
 .vram-widget * {
-    color: $orange;
-    font-size: $textsize;
+  color: $active;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 .vram-util-progress {
-    background-color: $inactive;
+  background-color: $bluegrey;
 }
 
 .ram-widget * {
-    color: $yellow;
-    font-size: $textsize;
+  color: $active;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 .ram-util-progress {
-    background-color: $inactive;
+  background-color: $bluegrey;
 }
 
 .gpu-widget * {
-    color: $cyan;
-    font-size: $textsize;
+  color: $active;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 .gpu-util-progress {
-    background-color: $inactive;
+  background-color: $bluegrey;
 }
 
 .cpu-widget * {
-    color: $green;
-    font-size: $textsize;
+  color: $active;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 .cpu-util-progress {
-    background-color: $inactive;
+  background-color: $bluegrey;
 }
 
 .battery-widget * {
-    color: $pink;
-    font-size: $textsize;
+  color: $pink;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 .battery-util-progress {
-    background-color: $inactive;
+  background-color: $inactive;
 }
 
 .battery-charging {
-    color: $orange;
+  color: $orange;
 }
 
 .battery-warning {
-    color: $red;
+  color: $red;
 }
 
 .network-data-text {
-    color: $green;
-    font-size: $textsize;
+  color: $active;
+  font-size: $textsizemd;
+  font-weight: bolder;
 }
 
 // <= 0% (Below MinUploadBytes)
 .network-up-under {
-    color: $inactive;
+  color: $bluegrey;
 }
+
 // <= 25%
 .network-up-low {
-    color: $green;
+  color: $active;
 }
+
 // <= 50%
 .network-up-mid-low {
-    color: $yellow;
+  color: $active;
 }
+
 // <= 75%
 .network-up-mid-high {
-    color: $orange;
+  color: $purple;
 }
+
 // <= 100%
 .network-up-high {
-    color: $purple;
+  color: $red;
 }
+
 // > 100% (Above MaxUploadBytes)
 .network-up-over {
-    color: $red;
+  color: $red;
 }
 
 // <= 0% (Below MinDownloadBytes)
 .network-down-under {
-    color: $inactive;
+  color: $bluegrey;
 }
+
 // <= 25%
 .network-down-low {
-    color: $green;
+  color: $active;
 }
+
 // <= 50%
 .network-down-mid-low {
-    color: $yellow;
+  color: $active;
 }
+
 // <= 75%
 .network-down-mid-high {
-    color: $orange;
+  color: $active;
 }
+
 // <= 100%
 .network-down-high {
-    color: $purple;
+  color: $active;
 }
+
 // > 100% (Above MaxDownloadBytes)
 .network-down-over {
-    color: $red;
+  color: $red;
 }
 
 // Workspaces
 .ws-dead {
-    color: $inactive;
-    font-size: $iconsizesmall;
+  color: $darkblue;
+  font-size: $iconsizesm;
 }
 
 .ws-inactive {
-    color: $darkblue;
-    font-size: $iconsizesmall;
+  color: $bluegrey;
+  font-size: $iconsizesm;
 }
 
 .ws-visible {
-    color: $cyan;
-    font-size: $iconsizesmall;
+  color: $active;
+  font-size: $iconsizesm;
 }
 
 .ws-current {
-    color: $yellow;
-    font-size: $iconsizesmall;
+  color: $active;
+  font-size: $iconsizesm;
 }
 
 .ws-active {
-    color: $green;
-    font-size: $iconsizesmall;
+  color: $active;
+  font-size: $iconsizesm;
 }
 
 // Bluetooth Widget
 @keyframes connectanim {
-    from {
-        background-image: radial-gradient(circle farthest-side at center, $btblue 0%, transparent 0%, transparent 100%)
-    }
-    to {
-        background-image: radial-gradient(circle farthest-side at center, $btblue 0%, $btblue 100%, transparent 100%)
-    }
+  from {
+    background-image: radial-gradient(circle farthest-side at center, $btblue 0%, transparent 0%, transparent 100%)
+  }
+
+  to {
+    background-image: radial-gradient(circle farthest-side at center, $btblue 0%, $btblue 100%, transparent 100%)
+  }
 }
+
 @keyframes disconnectanim {
-    from {
-        background-image: radial-gradient(circle farthest-side at center, transparent 0%, $btblue 0%, $btblue 100%)
-    }
-    to {
-        background-image: radial-gradient(circle farthest-side at center, transparent 0%, transparent 100%, $btblue 100%)
-    }
+  from {
+    background-image: radial-gradient(circle farthest-side at center, transparent 0%, $btblue 0%, $btblue 100%)
+  }
+
+  to {
+    background-image: radial-gradient(circle farthest-side at center, transparent 0%, transparent 100%, $btblue 100%)
+  }
 }
 
 @keyframes scanonanim {
-    from {
-        color: $yellow;
-    }
-    to {
-        color: $green;
-    }
+  from {
+    color: $yellow;
+  }
+
+  to {
+    color: $green;
+  }
 }
 
 @keyframes scanoffanim {
-    from {
-        color: $green;
-    }
-    to {
-        color: $yellow;
-    }
+  from {
+    color: $green;
+  }
+
+  to {
+    color: $yellow;
+  }
 }
 
 .bt-bg {
-    background-color: $bg;
-    border-radius: 16px;
+  background-color: $bg;
+  border-radius: 16px;
 }
 
 .bt-header-box {
-    margin-top: 4px;
-    margin-right: 8px;
-    margin-left: 8px;
-    font-size: 24px;
-    color: $btblue;
-} 
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-left: 8px;
+  font-size: 24px;
+  color: $btblue;
+}
 
 .bt-body-box {
-    margin-right: 8px;
-    margin-left: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 .bt-button {
-    &.active {
-        animation-name: connectanim;
-        animation-duration: 50ms;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-    }
-    &.inactive {
-        animation-name: disconnectanim;
-        animation-duration: 50ms;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-    }
-    &.failed {
-        color: $red;
-    }
-    border-radius: 16px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+  &.active {
+    animation-name: connectanim;
+    animation-duration: 50ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
 
-    margin-bottom: 4px;
-    margin-top: 4px;
+  &.inactive {
+    animation-name: disconnectanim;
+    animation-duration: 50ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
 
-    font-size: 16px;
-    // color: $green;
+  &.failed {
+    color: $red;
+  }
+
+  border-radius: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  margin-bottom: 4px;
+  margin-top: 4px;
+
+  font-size: 16px;
+  // color: $green;
 }
 
 .bt-close {
-    color: $red;
-    background-color: $inactive;
-    border-radius: 16px;
-    padding: 0px 8px 0px 7px;
-    margin: 0px 0px 0px 8px;
+  color: $red;
+  background-color: $inactive;
+  border-radius: 16px;
+  padding: 0px 8px 0px 7px;
+  margin: 0px 0px 0px 8px;
 }
 
 .bt-scan {
-    &.active {
-        animation-name: scanonanim;
-        animation-duration: 50ms;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-    }
-    &.inactive {
-        animation-name: scanoffanim;
-        animation-duration: 50ms;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-    }
-    color: $yellow;
-    background-color: $inactive;
-    border-radius: 16px;
-    padding: 2px 11px 0px 7px;
-    margin: 0px 0px 0px 10px;
-    font-size: 18px;
+  &.active {
+    animation-name: scanonanim;
+    animation-duration: 50ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &.inactive {
+    animation-name: scanoffanim;
+    animation-duration: 50ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  color: $yellow;
+  background-color: $inactive;
+  border-radius: 16px;
+  padding: 2px 11px 0px 7px;
+  margin: 0px 0px 0px 10px;
+  font-size: 18px;
 }
