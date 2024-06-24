@@ -27,17 +27,17 @@ WidgetsLeft: [Workspaces, Title]
 # Widgets to center
 WidgetsCenter: [Time]
 # Widgets to display on the right side
-WidgetsRight: [Tray, Audio, Update, Network, CPU, RAM, Disk, Power]
+WidgetsRight: [Tray, Audio, Network, CPU, RAM, Disk, Power]
 
 # The CPU sensor to use
 CPUThermalZone: /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
 
 # The card to poll when using AMDGPU. If you don't have an AMD card, you can skip this config.
 # Possible values can be found by querying /sys/class/drm
-DrmAmdCard: card0
+# DrmAmdCard: card0
 
 # Relative path to AMD gpu thermal sensor, appended after /sys/class/drm/<DrmAmdCard>
-AmdGPUThermalZone: /device/hwmon/hwmon1/temp1_input
+# AmdGPUThermalZone: /device/hwmon/hwmon1/temp1_input
 
 # The command to execute on suspend
 SuspendCommand: ~/.config/scripts/sys.sh suspend
@@ -162,11 +162,11 @@ CheckPackagesCommand: p="$(checkupdates)"; e=$?; if [ $e -eq 127 ] ; then exit 1
 
 
 # How often to check for updates. In seconds
-CheckUpdateInterval: 300
+CheckUpdateInterval: 10
 
 # Limits the range of the audio slider. Only works for audio output.
 # Slider "empty" is AudioMinVolume, Slider "full" is AudioMaxVolume
-Slider: full
+# Slider: full
 AudioMinVolume: 0
 AudioMaxVolume: 150
 
