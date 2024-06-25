@@ -12,35 +12,25 @@
   ],
   "modules-right": [
     "tray",
-    "pulseaudio",
-    "network",
-    "power-profiles-daemon",
     "cpu",
-    "memory"
-    // "keyboard-state",
-    // "hyprland/language"
-    // "hyprland/mode",
-    // "hyprland/scratchpad",
-    // "custom/media"
-    // "idle_inhibitor",
-    // "mpd",
-    // "temperature",
-    // "backlight",
-    // "battery",
-    // "battery#bat2"
+    "memory",
+    "temperature",
+    "pulseaudio"
   ],
-  // Modules configuration
   "hyprland/workspaces": {
     "disable-scroll": true,
-    "all-outputs": true,
+    "all-outputs": false,
     "warp-on-scroll": false,
-    "format": "{name}: {icon}",
+    "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
+      "1": "󰎤",
+      "2": "󰎧",
+      "3": "󰎪",
+      "4": "󰎭",
+      "5": "󰎱",
+      "6": "󰎳",
+      "7": "󰎶",
+      "8": "󰎹",
       "urgent": "",
       "focused": "",
       "default": ""
@@ -61,12 +51,12 @@
   "hyprland/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": [
-      "",
-      ""
-    ],
     "tooltip": true,
-    "tooltip-format": "{app}: {title}"
+    "tooltip-format": "{app}: {title}",
+    "format-icons": [
+      "",
+      ""
+    ]
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -74,6 +64,8 @@
     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
     "unknown-tag": "N/A",
     "interval": 5,
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
     "consume-icons": {
       "on": ""
     },
@@ -90,9 +82,7 @@
     "state-icons": {
       "paused": "",
       "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
+    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -102,11 +92,9 @@
     }
   },
   "tray": {
-    // "icon-size": 21,
     "spacing": 10
   },
   "clock": {
-    // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
@@ -118,10 +106,10 @@
     "format": "{}% "
   },
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
+    "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
     "format-icons": [
       "",
@@ -146,17 +134,16 @@
   },
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 80,
       "warning": 30,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
+    "format-good": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": [
       "",
       "",
@@ -180,7 +167,7 @@
     }
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "interface": "wlp2*",
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{ifname} via {gwaddr} ",
@@ -189,7 +176,8 @@
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
     "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
@@ -208,19 +196,6 @@
         "",
         ""
       ]
-    },
-    "on-click": "pavucontrol"
-  },
-  "custom/media": {
-    "format": "{icon} {}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
   }
 }
