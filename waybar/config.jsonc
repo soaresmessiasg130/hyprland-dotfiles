@@ -12,16 +12,29 @@
   ],
   "modules-right": [
     "tray",
-    "cpu",
-    "memory",
-    "temperature",
-    "pulseaudio"
+    "group/audio",
+    "group/hardware"
   ],
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "cava",
+      "pulseaudio"
+    ]
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
     "warp-on-scroll": false,
-    "format": "{icon}",
+    "format": "{name}",
     "format-icons": {
       "1": "1",
       "2": "2",
@@ -35,6 +48,31 @@
       "focused": "",
       "default": ""
     }
+  },
+  "cava": {
+    "framerate": 60,
+    "autosens": 1,
+    "sleep_timer": 1,
+    "hide_on_silence": true,
+    "method": "pipewire",
+    "reverse": true,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "stereo": true,
+    "bars": 12,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
   },
   "keyboard-state": {
     "numlock": true,
@@ -182,7 +220,7 @@
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format-source": " {volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
