@@ -4,17 +4,27 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "clock"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "tray",
     "group/audio",
-    "group/hardware"
+    "group/hardware",
+    "clock"
   ],
+  "hyprland/window": {
+    "format": "{title}",
+    "maxLength": 50,
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 16,
+    "rewrite": {
+      "(.*) - Vivaldi": "$1"
+    }
+  },
   "group/audio": {
     "orientation": "horizontal",
     "modules": [
@@ -133,8 +143,9 @@
     "spacing": 10
   },
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": "{:%Y-%m-%d %H:%M}",
+    "format-alt": "{:%Y-%m-%d %H:%M}"
   },
   "cpu": {
     "format": "{usage}% ",
