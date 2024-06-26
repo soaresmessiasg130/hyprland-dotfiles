@@ -43,4 +43,6 @@ ln -s $HOME/hyprland-dotfiles/gBar $HOME/.config/gBar
 ln -s $HOME/hyprland-dotfiles/fonts $HOME/.local/share/fonts
 
 ln -s $HOME/hyprland-dotfiles/kitty $HOME/.config/kitty
+
+ln -s $HOME/hyprland-dotfiles/waybar $HOME/.config/waybar
 ```
