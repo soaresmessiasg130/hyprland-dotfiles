@@ -4,6 +4,8 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
+    "group/images",
+    "user",
     "hyprland/window"
   ],
   "modules-center": [
@@ -15,12 +17,34 @@
     "group/hardware",
     "clock"
   ],
+  "group/images": {
+    "orientation": "horizontal",
+    "modules": [
+      "image#archlinux",
+      "image#hyprland"
+    ]
+  },
+  "image#archlinux": {
+    "path": "/home/msz/hyprland-dotfiles/assets/archlinux-logo.png",
+    "size": 18
+  },
+  "image#hyprland": {
+    "path": "/home/msz/hyprland-dotfiles/assets/hyprland-logo.png",
+    "size": 18
+  },
+  "user": {
+    "format": "  {user}",
+    "avatar": "/home/msz/hyprland-dotfiles/assets/user.png",
+    "width": 18,
+    "height": 18,
+    "icon": true
+  },
   "hyprland/window": {
     "format": "{title}",
     "maxLength": 50,
     "separate-outputs": true,
     "icon": true,
-    "icon-size": 16,
+    "icon-size": 18,
     "rewrite": {
       "(.*) - Vivaldi": "$1"
     }
@@ -156,10 +180,10 @@
   },
   "temperature": {
     "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
     "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
+    "format-critical": "{temperatureC}°C",
+    "format": "{temperatureC}°C",
     "format-icons": [
       "",
       "",

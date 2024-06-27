@@ -11,7 +11,7 @@
 }
 
 window#waybar>box {
-  background: linear-gradient(300deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .3), rgba(0, 0, 0, .1));
+  background: rgba(0, 0, 0, .2);
   padding: 0px;
   border: none;
   border-radius: 0;
@@ -42,7 +42,7 @@ window#waybar.hidden {
 .modules-left>*,
 .modules-center>*,
 .modules-right>* {
-  background: linear-gradient(300deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .3), rgba(255, 255, 255, .1));
+  background: linear-gradient(5deg, rgba(0, 0, 0, .05), rgba(255, 255, 255, .15), rgba(0, 0, 0, .05));
   box-shadow: 0 0 8px -8px rgba(0, 0, 0, 1);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -63,15 +63,21 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-  background: linear-gradient(300deg, rgba(51, 204, 255, .1), rgba(51, 204, 255, .3), rgba(51, 204, 255, .1));
+  background: linear-gradient(5deg, rgba(51, 204, 255, .1), rgba(51, 204, 255, .3), rgba(51, 204, 255, .1));
+  transition: 500ms;
+  transition-property: background;
 }
 
 #workspaces button.active {
-  background: linear-gradient(300deg, rgba(51, 204, 255, .9), rgba(51, 204, 255, .7), rgba(51, 204, 255, .9));
+  background: linear-gradient(5deg, rgba(51, 204, 255, .5), rgba(51, 204, 255, .8), rgba(51, 204, 255, .5));
+  transition: 500ms;
+  transition-property: background;
 }
 
 #workspaces button.active:hover {
-  background: linear-gradient(300deg, rgba(51, 204, 255, 1), rgba(51, 204, 255, .8), rgba(51, 204, 255, 1));
+  background: linear-gradient(5deg, rgba(51, 204, 255, .8), rgba(51, 204, 255, .8), rgba(51, 204, 255, .8));
+  transition: 500ms;
+  transition-property: background;
 }
 
 #cava {
@@ -91,4 +97,8 @@ tooltip>*>* {
   box-shadow: 0 0 8px -8px black;
   border-radius: 8px;
   border: 2px solid rgba(89, 89, 89, 0.8);
+}
+
+#image.archlinux {
+  margin-right: 8px;
 }
