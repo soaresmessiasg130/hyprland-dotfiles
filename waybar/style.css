@@ -88,6 +88,10 @@ window#waybar.hidden {
   padding: 0px 8px;
 }
 
+#privacy {
+  padding-right: 8px;
+}
+
 tooltip>*>* {
   padding: 4px 8px;
   background: black;
