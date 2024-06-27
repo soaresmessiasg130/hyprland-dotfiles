@@ -20,6 +20,8 @@ yay -S gbar-git
 
 yay -S bibata-cursor-theme
 
+yay -S hyprpaper
+
 yay -S waypaper-engine
 
 yay -S piper

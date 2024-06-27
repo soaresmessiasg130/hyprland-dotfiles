@@ -4,23 +4,59 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
+    "custom/launcher",
+    "group/images",
+    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "tray",
-    "group/audio",
-    "group/hardware",
+    "user",
     "clock"
   ],
+  "modules-right": [
+    "group/tray",
+    "group/audio",
+    "group/hardware"
+  ],
+  "custom/launcher": {
+    "format": "☰",
+    "on-click": "rofi -show drun -theme $HOME/.config/rofi/launchers/type-7/style-4.rasi"
+  },
+  "group/tray": {
+    "orientation": "horizontal",
+    "modules": [
+      "privacy",
+      "tray"
+    ]
+  },
+  "group/images": {
+    "orientation": "horizontal",
+    "modules": [
+      "image#archlinux",
+      "image#hyprland"
+    ]
+  },
+  "image#archlinux": {
+    "path": "/home/msz/hyprland-dotfiles/assets/archlinux-logo.png",
+    "size": 18
+  },
+  "image#hyprland": {
+    "path": "/home/msz/hyprland-dotfiles/assets/hyprland-logo.png",
+    "size": 18
+  },
+  "user": {
+    "format": "  {user}",
+    "avatar": "/home/msz/hyprland-dotfiles/assets/user.png",
+    "width": 18,
+    "height": 18,
+    "icon": true
+  },
   "hyprland/window": {
     "format": "{title}",
-    "maxLength": 50,
+    "maxLength": 30,
     "separate-outputs": true,
     "icon": true,
-    "icon-size": 16,
+    "icon-size": 18,
     "rewrite": {
       "(.*) - Vivaldi": "$1"
     }
@@ -139,32 +175,31 @@
       "deactivated": ""
     }
   },
+  "privacy": {
+    "icon-size": 14,
+    "icon-spacing": 8
+  },
   "tray": {
-    "spacing": 10
+    "icon-size": 18,
+    "spacing": 8,
+    "reverse-direction": true
   },
   "clock": {
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "format": "{:%Y-%m-%d %H:%M}",
-    "format-alt": "{:%Y-%m-%d %H:%M}"
+    "format": "{:%h %d %H:%M} 🕓",
+    "format-alt": "{:%h %d %H:%M} 🕓"
   },
   "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
+    "format": "{usage}% 🔲",
+    "tooltip": true
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% 💿"
   },
   "temperature": {
-    "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
+    "thermal-zone": 1,
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
+    "format": "{temperatureC}° 🌡️"
   },
   "backlight": {
     // "device": "acpi_video1",
@@ -231,8 +266,8 @@
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": " {volume}% ",
-    "format-source-muted": "",
+    "format-source": " {volume}% 🎙️",
+    "format-source-muted": "🔇",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -241,9 +276,7 @@
       "portable": "",
       "car": "",
       "default": [
-        "",
-        "",
-        ""
+        "🔊"
       ]
     }
   }
