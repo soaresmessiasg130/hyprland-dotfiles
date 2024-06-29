@@ -4,30 +4,46 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
-    "custom/launcher",
     "group/images",
-    "hyprland/workspaces",
+    "user",
+    "group/tools",
     "hyprland/window"
   ],
   "modules-center": [
-    "user",
-    "clock"
+    "hyprland/workspaces"
   ],
   "modules-right": [
-    "group/tray",
+    "privacy",
+    "tray",
     "group/audio",
-    "group/hardware"
+    "group/hardware",
+    "clock",
+    "custom/lock"
   ],
-  "custom/launcher": {
-    "format": "☰",
-    "on-click": "rofi -show drun -theme $HOME/.config/rofi/launchers/type-7/style-4.rasi"
-  },
-  "group/tray": {
+  "group/tools": {
     "orientation": "horizontal",
     "modules": [
-      "privacy",
-      "tray"
+      "custom/search",
+      "custom/picker"
     ]
+  },
+  "custom/lock": {
+    "format": "💤",
+    "on-click": "wleave",
+    "tooltip": true,
+    "tooltip-format": "Lock"
+  },
+  "custom/search": {
+    "format": "🔎",
+    "on-click": "wofi -H 600 -W 500 --show drun --allow-images --insensitive -l",
+    "tooltip": true,
+    "tooltip-format": "Search"
+  },
+  "custom/picker": {
+    "format": "🖌️",
+    "on-click": "hyprpicker -a --format=hex",
+    "tooltip": true,
+    "tooltip-format": "Color picker"
   },
   "group/images": {
     "orientation": "horizontal",
@@ -38,11 +54,15 @@
   },
   "image#archlinux": {
     "path": "/home/msz/hyprland-dotfiles/assets/archlinux-logo.png",
-    "size": 18
+    "size": 18,
+    "tooltip": true,
+    "tooltip-format": "Arch Linux"
   },
   "image#hyprland": {
     "path": "/home/msz/hyprland-dotfiles/assets/hyprland-logo.png",
-    "size": 18
+    "size": 18,
+    "tooltip": true,
+    "tooltip-format": "Arch Linux"
   },
   "user": {
     "format": "  {user}",
@@ -176,7 +196,7 @@
     }
   },
   "privacy": {
-    "icon-size": 14,
+    "icon-size": 12,
     "icon-spacing": 8
   },
   "tray": {
