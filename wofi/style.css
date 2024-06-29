@@ -1,0 +1,71 @@
+* {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 8px;
+  /* border: 1px solid rgba(255, 255, 255, .6); */
+  background: transparent;
+  box-shadow: none;
+  color: rgba(255, 255, 255, .9);
+}
+
+window {
+  border: 2px solid;
+  background: linear-gradient(5deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .1), rgba(0, 0, 0, .05));
+  border: 2px solid rgba(51, 204, 255, 1);
+}
+
+#outer-box {
+  padding: 16px;
+}
+
+#scroll {
+  padding: 0 32px 0;
+  margin: 0px;
+}
+
+#scroll>* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#scroll>*>* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#inner-box {
+  padding: 0 16px 0;
+  padding: 0px;
+  margin: 0px;
+}
+
+#input {
+  background: rgba(255, 255, 255, .1);
+  border: 2px solid rgba(255, 255, 255, .6);
+  padding: 18px 8px;
+  margin: 0px;
+  font-size: 24px;
+  color: #fff;
+}
+
+#entry {
+  border: 2px solid rgba(255, 255, 255, .2);
+  background: transparent;
+  padding: 4px 16px;
+  margin-top: 4px;
+  font-size: 20px;
+  color: #fff;
+}
+
+#entry:selected {
+  border: 2px solid rgba(255, 255, 255, .6);
+  background: rgba(255, 255, 255, .1);
+}
+
+#img {
+  width: 48px;
+  height: 48px;
+}
