@@ -88,13 +88,9 @@ window#waybar.hidden {
   padding: 0px 8px;
 }
 
-#privacy {
-  padding-right: 8px;
-}
-
 tooltip>*>* {
   padding: 4px 8px;
-  background: black;
+  background: rgba(0, 0, 0, .8);
   color: #dddddd;
   font-size: 14px;
   font-weight: 600;
@@ -105,4 +101,8 @@ tooltip>*>* {
 
 #image.archlinux {
   margin-right: 8px;
+}
+
+#custom-search {
+  padding-right: 8px;
 }
