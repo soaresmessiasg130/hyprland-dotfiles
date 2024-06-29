@@ -12,8 +12,6 @@ https://github.com/JaKooLit/Wallpaper-Bank.git
 ``` bash
 yay -S swaync
 
-yay -S rofi
-
 yay -S glib2-devel
 
 yay -S gbar-git
@@ -36,9 +34,15 @@ yay -S nautilus
 
 yay -S vivaldi
 
-ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
+yay -S papirus-icon-theme
 
-ln -s $HOME/hyprland-dotfiles/rofi $HOME/.config/rofi
+yay -S hypridle
+
+yay -S hyprlock
+
+yay -S hyprpicker-git
+
+ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
 ln -s $HOME/hyprland-dotfiles/gBar $HOME/.config/gBar
 
@@ -47,4 +51,10 @@ ln -s $HOME/hyprland-dotfiles/fonts $HOME/.local/share/fonts
 ln -s $HOME/hyprland-dotfiles/kitty $HOME/.config/kitty
 
 ln -s $HOME/hyprland-dotfiles/waybar $HOME/.config/waybar
+
+ln -s $HOME/hyprland-dotfiles/wofi $HOME/.config/wofi
+
+ln -s $HOME/hyprland-dotfiles/gtk-3.0 $HOME/.config/gtk-3.0
+
+ln -s $HOME/hyprland-dotfiles/wleave $HOME/.config/wleave
 ```
