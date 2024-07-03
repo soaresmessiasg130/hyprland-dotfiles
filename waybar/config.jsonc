@@ -24,7 +24,8 @@
     "orientation": "horizontal",
     "modules": [
       "custom/search",
-      "custom/picker"
+      "custom/picker",
+      "custom/cliphist"
     ]
   },
   "custom/lock": {
@@ -44,6 +45,12 @@
     "on-click": "hyprpicker -a --format=hex",
     "tooltip": true,
     "tooltip-format": "Color picker"
+  },
+  "custom/cliphist": {
+    "format": "📋",
+    "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+    "tooltip": true,
+    "tooltip-format": "Cliphist"
   },
   "group/images": {
     "orientation": "horizontal",

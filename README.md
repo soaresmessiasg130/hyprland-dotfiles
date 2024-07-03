@@ -42,6 +42,8 @@ yay -S hyprlock
 
 yay -S hyprpicker-git
 
+yay -S cliphist
+
 ln -s $HOME/hyprland-dotfiles/hypr $HOME/.config/hypr
 
 ln -s $HOME/hyprland-dotfiles/gBar $HOME/.config/gBar
