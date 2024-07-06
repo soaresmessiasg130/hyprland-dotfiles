@@ -18,7 +18,7 @@
     "group/audio",
     "group/hardware",
     "clock",
-    "custom/lock"
+    "group/lock"
   ],
   "group/tools": {
     "orientation": "horizontal",
@@ -26,6 +26,13 @@
       "custom/search",
       "custom/picker",
       "custom/cliphist"
+    ]
+  },
+  "group/lock": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/notification",
+      "custom/lock"
     ]
   },
   "custom/lock": {
@@ -51,6 +58,12 @@
     "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
     "tooltip": true,
     "tooltip-format": "Cliphist"
+  },
+  "custom/notification": {
+    "format": "🔔",
+    "on-click": "swaync-client -t -sw",
+    "tooltip": true,
+    "tooltip-format": "Notification"
   },
   "group/images": {
     "orientation": "horizontal",
@@ -213,8 +226,8 @@
   },
   "clock": {
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "format": "{:%h %d %H:%M} 🕓",
-    "format-alt": "{:%h %d %H:%M} 🕓"
+    "format": "{:%h %d  %H:%M}  🕓",
+    "format-alt": "{:%h %d  %H:%M}  🕓"
   },
   "cpu": {
     "format": "{usage}% 🔲",
