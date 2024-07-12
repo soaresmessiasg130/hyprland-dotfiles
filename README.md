@@ -24,7 +24,7 @@ vivaldi
 papirus-icon-theme
 hypridle
 hyprlock
-hyprpicker-git
+hyprpicker
 cliphist
 pfetch
 zsh
