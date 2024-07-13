@@ -73,20 +73,20 @@
     ]
   },
   "image#archlinux": {
-    "path": "/home/msz/hyprland-dotfiles/assets/archlinux-logo.png",
+    "path": "/tmp/hyprland-dotfiles/assets/archlinux-logo.png",
     "size": 18,
     "tooltip": true,
     "tooltip-format": "Arch Linux"
   },
   "image#hyprland": {
-    "path": "/home/msz/hyprland-dotfiles/assets/hyprland-logo.png",
+    "path": "/tmp/hyprland-dotfiles/assets/hyprland-logo.png",
     "size": 18,
     "tooltip": true,
     "tooltip-format": "Arch Linux"
   },
   "user": {
     "format": "  {user}",
-    "avatar": "/home/msz/hyprland-dotfiles/assets/user.png",
+    "avatar": "/tmp/hyprland-dotfiles/assets/user.png",
     "width": 18,
     "height": 18,
     "icon": true
