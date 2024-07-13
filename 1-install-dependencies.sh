@@ -1,93 +1,89 @@
 #!/bin/bash
 
-# Function to install yay
+packages=(
+  gst-libav 
+  gst-plugins-base 
+  gst-plugins-good 
+  gst-plugins-bad 
+  gst-plugins-ugly 
+  gstreamer-vaapi 
+  x265 
+  x264 
+  lame 
+
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  noto-fonts-extra
+
+  polkit-kde-agent 
+  qt5-wayland 
+  qt6-wayland 
+  glib2-devel 
+  pavucontrol 
+  wl-clipboard 
+  cliphist 
+  grim 
+  slurp 
+  nautilus 
+  bibata-cursor-theme 
+  papirus-icon-theme 
+  pfetch 
+  nano-syntax-highlighting 
+  zsh
+
+  cava 
+  swaync 
+  gbar-git 
+  hyprpaper 
+  waypaper-engine 
+  waybar 
+  wleave-git 
+  hypridle 
+  hyprlock 
+  hyprpicker 
+
+  piper 
+  vivaldi 
+)
+
 install_yay() {
-    echo "Installing yay..."
-    sudo pacman -S --needed git base-devel
+  if ! command -v yay &> /dev/null; then
+    echo ">>> installing yay..."
+    sudo pacman -S --noconfirm --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si
+    makepkg -si --noconfirm
     cd ..
     rm -rf yay
-    echo "yay installed successfully."
+  else
+    echo "!!! yay is already installed..."
+  fi
 }
 
-# Function to install packages
 install_packages() {
-    echo "Installing packages..."
-    yay -S --needed \
-        gst-libav \
-        gst-plugins-base \
-        gst-plugins-good \
-        gst-plugins-bad \
-        gst-plugins-ugly \
-        gstreamer-vaapi \
-        x265 \
-        x264 \
-        lame \
-        all-repository-fonts \
-        ttf-ms-win11-auto \
-        otf-san-francisco \
-        otf-san-francisco-mono \
-        polkit-kde-agent \
-        qt5-wayland \
-        qt6-wayland \
-        swaync \
-        glib2-devel \
-        gbar-git \
-        bibata-cursor-theme \
-        hyprpaper \
-        waypaper-engine \
-        piper \
-        grim \
-        slurp \
-        wl-clipboard \
-        nautilus \
-        vivaldi \
-        papirus-icon-theme \
-        pavucontrol \
-        waybar \
-        wleave-git \
-        cava \
-        hypridle \
-        hyprlock \
-        hyprpicker \
-        cliphist \
-        pfetch \
-        nano-syntax-highlighting \
-        zsh
-    echo "Packages installed successfully."
+  echo ">>> installing packages..."
+  for package in "${packages[@]}"; do
+    yay -S --noconfirm --needed "$package"
+  done
 }
 
-# Function to install Oh My Zsh and plugins
-install_oh_my_zsh() {
-    echo "Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    
-    echo "Installing Powerlevel10k theme..."
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    
-    echo "Installing Zsh plugins..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    
-    echo "Oh My Zsh and plugins installed successfully."
+install_zsh_ohmyzsh_p10k() {
+  echo ">>> installing Zsh + Oh My Zsh + Powerlevel10k..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
 
-# Main script execution
-echo "Starting installation process..."
+echo ">>> started"
 
-# Install yay
-if ! command -v yay &> /dev/null; then
-    install_yay
-else
-    echo "yay is already installed."
-fi
+cd $HOME
 
-# Install packages
+install_yay
+
 install_packages
 
-# Install Oh My Zsh and plugins
-install_oh_my_zsh
+install_zsh_ohmyzsh_p10k
 
-echo "Installation process completed."
+echo ">>> finished"
