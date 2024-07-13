@@ -57,7 +57,7 @@ packages=(
 
 # Function to install packages
 install_packages() {
-    for package in "${packages[@]}"; then
+    for package in "${packages[@]}"; do
       yay -S --noconfirm --needed "$package"
     done
 }
