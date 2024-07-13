@@ -1,7 +1,6 @@
 # hyprland-dotfiles
 
-https://wiki.hyprland.org/Useful-Utilities/Must-have
-https://github.com/hyprland-community/awesome-hyprland
+cd https://github.com/hyprland-community/awesome-hyprland
 https://github.com/ErikReider/SwayNotificationCenter
 https://github.com/JaKooLit/Wallpaper-Bank.git
 
@@ -10,6 +9,14 @@ pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+```
+
+```bash
+yay -S gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi x265 x264 lame
+yay -S adobe-source-sans-pro-fonts ttf-dejavu ttf-opensans noto-fonts freetype2 terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-fira-mono ttf-fira-sans ttf-freefont ttf-inconsolata ttf-liberation libertinus-font
+# or yay -S all-repository-fonts
+yay -S ttf-ms-win11-auto
+yay -S otf-san-francisco otf-san-francisco-mono
 ```
 
 ``` bash
@@ -29,11 +36,16 @@ wl-clipboard
 nautilus
 vivaldi
 papirus-icon-theme
+pavucontrol
+waybar
+wleave-git
+cava
 hypridle
 hyprlock
 hyprpicker
 cliphist
 pfetch
+nano-syntax-highlighting
 zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -61,4 +73,6 @@ ln -s $HOME/hyprland-dotfiles/gtk-3.0 $HOME/.config/gtk-3.0
 ln -s $HOME/hyprland-dotfiles/wleave $HOME/.config/wleave
 ln -s $HOME/hyprland-dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/hyprland-dotfiles/zsh/.p10k.zsh $HOME/.p10k.zsh
+
+mkdir pictures folder
 ```
