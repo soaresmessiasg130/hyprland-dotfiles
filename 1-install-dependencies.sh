@@ -15,6 +15,7 @@ packages=(
   noto-fonts-cjk
   noto-fonts-emoji
   noto-fonts-extra
+  ttf-font-awesome
 
   polkit-kde-agent 
   qt5-wayland 
