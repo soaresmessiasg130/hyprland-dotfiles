@@ -76,7 +76,7 @@ install_zsh_ohmyzsh_p10k() {
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
 
-echo "\n\n>>> started"
+echo ">>> started"
 
 cd $HOME
 
@@ -86,4 +86,4 @@ install_packages
 
 install_zsh_ohmyzsh_p10k
 
-echo "\n\n>>> finished\n\n"
+echo ">>> finished"
