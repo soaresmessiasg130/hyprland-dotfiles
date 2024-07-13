@@ -49,7 +49,7 @@ packages=(
 
 install_yay() {
   if ! command -v yay &> /dev/null; then
-    echo "installing yay..."
+    echo ">>> installing yay..."
     sudo pacman -S --noconfirm --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay
@@ -57,27 +57,26 @@ install_yay() {
     cd ..
     rm -rf yay
   else
-    echo "yay is already installed..."
+    echo "!!! yay is already installed..."
   fi
 }
 
 install_packages() {
-  echo "installing packages..."
+  echo ">>> installing packages..."
   for package in "${packages[@]}"; do
-    echo "Installing $package"
     yay -S --noconfirm --needed "$package"
   done
 }
 
 install_zsh_ohmyzsh_p10k() {
-  echo "installing Zsh + Oh My Zsh + Powerlevel10k..."
+  echo ">>> installing Zsh + Oh My Zsh + Powerlevel10k..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
 
-echo ">>> started"
+echo "\n\n>>> started"
 
 cd $HOME
 
@@ -87,4 +86,4 @@ install_packages
 
 install_zsh_ohmyzsh_p10k
 
-echo ">>> finished"
+echo "\n\n>>> finished\n\n"
