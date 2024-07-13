@@ -44,11 +44,7 @@ for target in "${!source_target_paths[@]}"; do
   source="${source_target_paths[$target]}"
   rm -rf "$target"
   ln -s "$source" "$target"
-  echo ">>> linked $source to $target"
-done
-
-for target in "${!source_target_paths[@]}"; do
-  echo "$target -> ${source_target_paths[$target]}"
+  echo ">>> linked $source -> $target"
 done
 
 echo ">>> finished"
