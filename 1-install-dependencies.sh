@@ -3,10 +3,10 @@
 # Function to install yay
 install_yay() {
     echo "Installing yay..."
-    sudo pacman -S --needed git base-devel
+    sudo pacman -S --noconfirm --needed git base-devel
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si
+    makepkg -si --noconfirm
     cd ..
     rm -rf yay
     echo "yay installed successfully."
