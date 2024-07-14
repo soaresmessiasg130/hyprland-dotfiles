@@ -4,15 +4,15 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
+    "hyprland/workspaces",
     "group/images",
     "user",
     "group/tools",
     "hyprland/window"
   ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-center": [ ],
   "modules-right": [
+    "network",
     "privacy",
     "tray",
     "group/audio",
@@ -20,6 +20,18 @@
     "clock",
     "group/lock"
   ],
+"network": {
+    // "interface": "wlp2s0",
+    "format": "{ifname}",
+    "format-wifi": "\uf1eb",
+    "format-ethernet": "{ipaddr}/{cidr} \uf796",
+    "format-disconnected": "\uf127",
+    "tooltip-format": "{ifname} via {gwaddr} \uf6ff",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+},
   "group/tools": {
     "orientation": "horizontal",
     "modules": [
