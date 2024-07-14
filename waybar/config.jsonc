@@ -96,10 +96,7 @@
     "maxLength": 30,
     "separate-outputs": true,
     "icon": true,
-    "icon-size": 18,
-    "rewrite": {
-      "(.*) - Vivaldi": "$1"
-    }
+    "icon-size": 18
   },
   "group/audio": {
     "orientation": "horizontal",
@@ -122,14 +119,6 @@
     "warp-on-scroll": false,
     "format": "{name}",
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
       "urgent": "",
       "focused": "",
       "default": ""
@@ -159,61 +148,6 @@
       "▇",
       "█"
     ]
-  },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  "hyprland/mode": {
-    "format": "<span style=\"italic\">{}</span>"
-  },
-  "hyprland/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
-    "tooltip": true,
-    "tooltip-format": "{app}: {title}",
-    "format-icons": [
-      "",
-      ""
-    ]
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)",
-    "consume-icons": {
-      "on": ""
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": ""
-    },
-    "repeat-icons": {
-      "on": ""
-    },
-    "single-icons": {
-      "on": "1"
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    }
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
   },
   "privacy": {
     "icon-size": 12,
@@ -255,49 +189,6 @@
       "",
       ""
     ]
-  },
-  "battery": {
-    "states": {
-      "good": 80,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-good": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
-  "network": {
-    "interface": "wlp2*",
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     "scroll-step": 2,
