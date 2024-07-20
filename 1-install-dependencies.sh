@@ -46,6 +46,9 @@ packages=(
 
   piper 
   vivaldi 
+  bluez
+  bluez-utils
+  blueman
 )
 
 install_yay() {
