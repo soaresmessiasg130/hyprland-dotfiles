@@ -21,7 +21,7 @@
     "clock",
     "group/lock"
   ],
-"network": {
+  "network": {
     // "interface": "wlp2s0",
     "format": "{ifname}",
     "format-wifi": "\uf1eb",
@@ -32,21 +32,21 @@
     "tooltip-format-ethernet": "{ifname}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
-},
-"bluetooth": {
-	"format": "",
-	"format-connected": " {device_alias}",
-	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-	"format-disabled": "",
-	"format-no-controller": "",
-	"format-off": "",
-	"interval": 30,
-	"on-click": "blueman-manager",
-	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-},
+  },
+  "bluetooth": {
+    "format": "\uf294",
+    "format-connected": "\uf294 {device_alias}",
+    "format-connected-battery": "\uf294 {device_alias} {device_battery_percentage}%",
+    "format-disabled": "",
+    "format-no-controller": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
   "group/tools": {
     "orientation": "horizontal",
     "modules": [
@@ -146,9 +146,9 @@
     "warp-on-scroll": false,
     "format": "{name}",
     "format-icons": {
-      "urgent": "",
-      "focused": "",
-      "default": ""
+      "urgent": "\uf071",
+      "focused": "\uf192",
+      "default": "\uf111"
     }
   },
   "cava": {
@@ -202,37 +202,22 @@
     "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input",
     "format": "{temperatureC}° \uf2c8"
   },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
   "pulseaudio": {
     "scroll-step": 2,
     "on-click": "pavucontrol",
     "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth": "{volume}% {icon}\uf294 {format_source}",
+    "format-bluetooth-muted": "\uf6a9 {icon}\uf294 {format_source}",
+    "format-muted": "\uf6a9 {format_source}",
     "format-source": " {volume}% \uf130",
-    "format-source-muted": "🔇",
+    "format-source-muted": "\uf6a9",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "headphone": "\uf025",
+      "hands-free": "\uf590",
+      "headset": "\uf590",
+      "phone": "\uf590",
+      "portable": "\uf590",
+      "car": "\uf1b9",
       "default": [
         "\uf028"
       ]
