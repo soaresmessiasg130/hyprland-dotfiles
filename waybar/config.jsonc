@@ -10,7 +10,7 @@
     "group/tools",
     "hyprland/window"
   ],
-  "modules-center": [ ],
+  "modules-center": [],
   "modules-right": [
     "battery",
     "bluetooth",
@@ -145,12 +145,9 @@
     "disable-scroll": true,
     "all-outputs": false,
     "warp-on-scroll": false,
-    "format": "{name}",
-    "format-icons": {
-      "urgent": "\uf071",
-      "focused": "\uf192",
-      "default": "\uf111"
-    }
+    "show-special": true,
+    "special-visible-only": true,
+    "format": "{name}"
   },
   "cava": {
     "framerate": 60,
@@ -232,7 +229,13 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "format-icons": [
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
+    ],
     "max-length": 25
   }
 }
