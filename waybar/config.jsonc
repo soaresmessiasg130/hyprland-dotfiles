@@ -12,6 +12,7 @@
   ],
   "modules-center": [ ],
   "modules-right": [
+    "battery",
     "bluetooth",
     "network",
     "privacy",
@@ -222,5 +223,16 @@
         "\uf028"
       ]
     }
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "max-length": 25
   }
 }
