@@ -1,5 +1,5 @@
 * {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", "Font Awesome 6 Free", sans-serif;
   font-size: 12px;
   font-weight: 600;
   padding: 0px;
@@ -110,3 +110,10 @@ tooltip>*>* {
 #custom-notification {
   padding-right: 8px;
 }
+
+/* #network */
+/* #network.disabled */
+/* #network.disconnected */
+/* #network.linked */
+/* #network.ethernet */
+/* #network.wifi */
