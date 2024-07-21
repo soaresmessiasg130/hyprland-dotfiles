@@ -4,60 +4,51 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces",
-    "group/images",
+    "custom/search",
+    "image#archlinux",
+    "image#hyprland",
     "user",
-    "group/tools",
     "hyprland/window"
   ],
-  "modules-center": [],
+  "modules-center": [
+    "custom/picker",
+    "custom/cliphist",
+    "custom/notification",
+    "custom/lock",
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "temperature"
+  ],
   "modules-right": [
+    "tray",
+    "privacy",
     "battery",
     "bluetooth",
     "network",
-    "privacy",
-    "tray",
-    "group/audio",
-    "group/hardware",
-    "clock",
-    "group/lock"
+    "cava",
+    "pulseaudio",
+    "clock"
   ],
   "group/tools": {
     "orientation": "horizontal",
-    "modules": [
-      "custom/search",
-      "custom/picker",
-      "custom/cliphist"
-    ]
+    "modules": []
   },
   "group/lock": {
     "orientation": "horizontal",
-    "modules": [
-      "custom/notification",
-      "custom/lock"
-    ]
+    "modules": []
   },
   "group/images": {
     "orientation": "horizontal",
-    "modules": [
-      "image#archlinux",
-      "image#hyprland"
-    ]
+    "modules": []
   },
   "group/audio": {
     "orientation": "horizontal",
-    "modules": [
-      "cava",
-      "pulseaudio"
-    ]
+    "modules": []
   },
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ]
+    "modules": []
   },
   "network": {
     // "interface": "wlp2s0",
@@ -136,7 +127,7 @@
   },
   "hyprland/window": {
     "format": "{title}",
-    "maxLength": 30,
+    "max-length": 30,
     "separate-outputs": true,
     "icon": true,
     "icon-size": 18

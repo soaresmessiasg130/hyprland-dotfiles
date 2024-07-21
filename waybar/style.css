@@ -80,14 +80,6 @@ window#waybar.hidden {
   transition-property: background;
 }
 
-#cava {
-  padding-right: 8px;
-}
-
-#memory {
-  padding: 0px 8px;
-}
-
 tooltip>*>* {
   padding: 4px 8px;
   background: rgba(0, 0, 0, .8);
@@ -97,6 +89,14 @@ tooltip>*>* {
   box-shadow: 0 0 8px -8px black;
   border-radius: 8px;
   border: 2px solid rgba(89, 89, 89, 0.8);
+}
+
+/* #cava {
+  padding-right: 8px;
+}
+
+#memory {
+  padding: 0px 8px;
 }
 
 #image.archlinux {
@@ -109,7 +109,7 @@ tooltip>*>* {
 
 #custom-notification {
   padding-right: 8px;
-}
+} */
 
 /* #network */
 /* #network.disabled */
