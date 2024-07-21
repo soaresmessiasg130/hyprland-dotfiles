@@ -35,7 +35,6 @@ packages=(
 
   cava 
   swaync 
-  gbar-git 
   hyprpaper 
   waypaper-engine 
   waybar 

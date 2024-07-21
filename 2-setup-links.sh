@@ -14,7 +14,6 @@ user_confirmation() {
 
 declare -A source_target_paths=(
   ["$HOME/.config/hypr"]="$HOME/hyprland-dotfiles/hypr"
-  ["$HOME/.config/gBar"]="$HOME/hyprland-dotfiles/gBar"
   ["$HOME/.local/share/fonts"]="$HOME/hyprland-dotfiles/fonts"
   ["$HOME/.config/kitty"]="$HOME/hyprland-dotfiles/kitty"
   ["$HOME/.config/waybar"]="$HOME/hyprland-dotfiles/waybar"
