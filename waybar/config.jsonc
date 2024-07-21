@@ -49,9 +49,9 @@
     "modules": [
       "tray",
       "privacy",
-      "battery",
       "bluetooth",
-      "network"
+      "network",
+      "battery"
     ]
   },
   "group/audio": {
