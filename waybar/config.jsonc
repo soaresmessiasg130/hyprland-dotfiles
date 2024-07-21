@@ -22,6 +22,43 @@
     "clock",
     "group/lock"
   ],
+  "group/tools": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/search",
+      "custom/picker",
+      "custom/cliphist"
+    ]
+  },
+  "group/lock": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/notification",
+      "custom/lock"
+    ]
+  },
+  "group/images": {
+    "orientation": "horizontal",
+    "modules": [
+      "image#archlinux",
+      "image#hyprland"
+    ]
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "cava",
+      "pulseaudio"
+    ]
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
   "network": {
     // "interface": "wlp2s0",
     "format": "{ifname}",
@@ -47,21 +84,6 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-  },
-  "group/tools": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/search",
-      "custom/picker",
-      "custom/cliphist"
-    ]
-  },
-  "group/lock": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/notification",
-      "custom/lock"
-    ]
   },
   "custom/lock": {
     "format": "\uf2f5",
@@ -93,13 +115,6 @@
     "tooltip": true,
     "tooltip-format": "Notification"
   },
-  "group/images": {
-    "orientation": "horizontal",
-    "modules": [
-      "image#archlinux",
-      "image#hyprland"
-    ]
-  },
   "image#archlinux": {
     "path": "/tmp/hyprland-dotfiles/assets/archlinux-logo.png",
     "size": 18,
@@ -125,21 +140,6 @@
     "separate-outputs": true,
     "icon": true,
     "icon-size": 18
-  },
-  "group/audio": {
-    "orientation": "horizontal",
-    "modules": [
-      "cava",
-      "pulseaudio"
-    ]
-  },
-  "group/hardware": {
-    "orientation": "horizontal",
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ]
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
