@@ -1,9 +1,9 @@
 * {
   font-family: "Noto Sans", "Font Awesome 6 Free", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   padding: 0px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: none;
   color: #ffffff;
   background: transparent;
@@ -11,7 +11,7 @@
 }
 
 window#waybar>box {
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, .4);
   padding: 0px;
   border: none;
   border-radius: 0;
@@ -36,16 +36,51 @@ window#waybar.hidden {
 .modules-left>widget>*,
 .modules-center>widget>*,
 .modules-right>widget>* {
-  padding: 0px 12px;
+  padding: 0px 10px;
 }
 
-.modules-left>*,
-.modules-center>*,
-.modules-right>* {
-  background: linear-gradient(5deg, rgba(0, 0, 0, .05), rgba(255, 255, 255, .15), rgba(0, 0, 0, .05));
+.modules-left>widget>*,
+.modules-center>widget>*,
+.modules-right>widget>* {
+  background: linear-gradient(5deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05), rgba(255, 255, 255, .15));
   box-shadow: 0 0 8px -8px rgba(0, 0, 0, 1);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+#center-left,
+#center-right,
+#window,
+#right-items {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+  padding: 0px 2px;
+}
+
+#center-left>*>*,
+#center-right>*>*,
+#window>*>*,
+#right-items>*>* {
+  padding: 0px 5px;
+}
+
+#center-right {
+  padding: 0px 1px;
+}
+
+#center-right>*>* {
+  padding: 0px 3px;
+}
+
+#audio,
+#left-items {
+  padding: 0px 6px;
+}
+
+#audio>*>*,
+#left-items>*>* {
+  padding: 0px 3px;
 }
 
 #workspaces {
@@ -56,7 +91,7 @@ window#waybar.hidden {
   background: transparent;
   padding: 0px 4px;
   margin: 0px;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0px 0px 2px -2px rgba(0, 0, 0, 0.1);
   transition: .2s;
   transition-property: background;
@@ -87,33 +122,6 @@ tooltip>*>* {
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 0 8px -8px black;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 2px solid rgba(89, 89, 89, 0.8);
 }
-
-/* #cava {
-  padding-right: 8px;
-}
-
-#memory {
-  padding: 0px 8px;
-}
-
-#image.archlinux {
-  margin-right: 8px;
-}
-
-#custom-picker {
-  padding: 0px 8px;
-}
-
-#custom-notification {
-  padding-right: 8px;
-} */
-
-/* #network */
-/* #network.disabled */
-/* #network.disconnected */
-/* #network.linked */
-/* #network.ethernet */
-/* #network.wifi */
