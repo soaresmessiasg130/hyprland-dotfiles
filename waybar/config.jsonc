@@ -5,50 +5,60 @@
   "reload_style_on_change": true,
   "modules-left": [
     "custom/search",
-    "image#archlinux",
-    "image#hyprland",
-    "user",
+    "group/left-items",
     "hyprland/window"
   ],
   "modules-center": [
-    "custom/picker",
-    "custom/cliphist",
-    "custom/notification",
-    "custom/lock",
+    "group/center-left",
     "hyprland/workspaces",
-    "cpu",
-    "memory",
-    "temperature"
+    "group/center-right"
   ],
   "modules-right": [
-    "tray",
-    "privacy",
-    "battery",
-    "bluetooth",
-    "network",
-    "cava",
-    "pulseaudio",
+    "group/right-items",
+    "group/audio",
     "clock"
   ],
-  "group/tools": {
+  "group/left-items": {
     "orientation": "horizontal",
-    "modules": []
+    "modules": [
+      "image#archlinux",
+      "image#hyprland",
+      "user"
+    ]
   },
-  "group/lock": {
+  "group/center-left": {
     "orientation": "horizontal",
-    "modules": []
+    "modules": [
+      "custom/picker",
+      "custom/cliphist",
+      "custom/notification",
+      "custom/lock"
+    ]
   },
-  "group/images": {
+  "group/center-right": {
     "orientation": "horizontal",
-    "modules": []
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
+  "group/right-items": {
+    "orientation": "horizontal",
+    "modules": [
+      "tray",
+      "privacy",
+      "battery",
+      "bluetooth",
+      "network"
+    ]
   },
   "group/audio": {
     "orientation": "horizontal",
-    "modules": []
-  },
-  "group/hardware": {
-    "orientation": "horizontal",
-    "modules": []
+    "modules": [
+      "cava",
+      "pulseaudio"
+    ]
   },
   "network": {
     // "interface": "wlp2s0",
