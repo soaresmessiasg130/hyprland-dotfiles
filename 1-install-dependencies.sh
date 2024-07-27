@@ -37,7 +37,6 @@ packages=(
   swaync 
   hyprpaper 
   waypaper-engine 
-  waybar 
   wleave-git 
   hypridle 
   hyprlock 
@@ -71,6 +70,19 @@ install_packages() {
   done
 }
 
+install_waybar() {
+  echo ">>> installing waybar..."
+  yay -R waybar
+  mkdir -p ~/Downloads
+  cd ~/Downloads
+  git clone https://github.com/Alexays/Waybar.git ./Waybar
+  cd ./Waybar
+  make
+  meson install -C build
+  cd ..
+  rm -rf ./Waybar
+}
+
 install_zsh_ohmyzsh_p10k() {
   echo ">>> installing Zsh + Oh My Zsh + Powerlevel10k..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -87,6 +99,8 @@ cd $HOME
 install_yay
 
 install_packages
+
+install_waybar
 
 install_zsh_ohmyzsh_p10k
 
