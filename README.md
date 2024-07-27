@@ -9,6 +9,13 @@ I recomended to install Hyprland with:
 - Kernel linux or linux-lts;
 - Enable ```multilib``` aditional repository;
 
+## All you need to know about
+
+### Keyborard
+
+- Layout: ```us``` - English(US)
+- Variant: ```alt-intl``` - alt. International
+
 ## Installation
 
 - Install dependencies and packages and everything:
@@ -66,3 +73,19 @@ I recomended to install Hyprland with:
   - battery:
     - if you are using laptop, the default battery is ```BAT0```;
 
+### Wallpapers
+
+- by default, you need to configure the wallpapers;
+- all my wallpapers are in /wallpapers - if you like it;
+- configure wallpapers:
+  - open Wallpaper Engine;
+  - I recommend you to use ```Wallpaper per display```;
+  - or if you want to set one wallpaper for all monitors, select other option;
+  - select your monitor then click ```save```;
+  - add images to your selected monitor, or a directory;
+  - the application will list all wallpapers;
+  - explore options by click on ```configure```;
+  - finish clicking on ```save```, naming your playlist;
+  - after create your playlist, you can load the same playlist for others monitors;
+  - or create another playlist for once monitors;
+  - reboot and all wallpapers will work;
