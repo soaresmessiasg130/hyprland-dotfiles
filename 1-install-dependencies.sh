@@ -1,6 +1,11 @@
 #!/bin/bash
 
 packages=(
+  cmake
+  meson
+  scdoc
+  libcava
+  wayland-protocols
   gst-libav 
   gst-plugins-base 
   gst-plugins-good 
@@ -9,7 +14,26 @@ packages=(
   gstreamer-vaapi 
   x265 
   x264 
-  lame 
+  lame
+  gtkmm3
+  jsoncpp
+  libsigc++
+  fmt
+  wayland
+  chrono-date
+  spdlog
+  libgtk-3-dev
+  gobject-introspection
+  libgirepository1.0-dev
+  libpulse
+  libnl
+  libappindicator-gtk3
+  libdbusmenu-gtk3
+  libmpdclient
+  libsndio
+  libevdev
+  xkbregistry
+  upower
 
   noto-fonts
   noto-fonts-cjk
