@@ -21,17 +21,13 @@ packages=(
   fmt
   wayland
   chrono-date
-  spdlog
   libgtk-3-dev
-  gobject-introspection
   libgirepository1.0-dev
   libpulse
   libnl
   libappindicator-gtk3
   libdbusmenu-gtk3
-  libmpdclient
   libsndio
-  libevdev
   xkbregistry
   upower
 
