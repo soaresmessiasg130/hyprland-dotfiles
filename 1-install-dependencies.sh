@@ -69,42 +69,66 @@ packages=(
   blueman
 )
 
+install_base() {
+  echo ""
+  echo ""
+  echo ""
+  echo ">>> DOWNLOADING YAY AND WAYBAR, AND INSTALL BASE..."
+  echo ""
+  mkdir -p ./temp
+  if ! command -v yay &> /dev/null; then
+    git clone https://aur.archlinux.org/yay.git ./temp/yay
+  fi
+  if ! command -v waybar &> /dev/null; then
+    git clone https://github.com/Alexays/Waybar.git ./temp/waybar
+  fi
+  sudo pacman -S --noconfirm --needed git base-devel
+}
+
 install_yay() {
   if ! command -v yay &> /dev/null; then
-    echo ">>> installing yay..."
-    sudo pacman -S --noconfirm --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
+    echo ""
+    echo ""
+    echo ""
+    echo ">>> INSTALLING YAY..."
+    echo ""
+    cd ./temp/yay
     makepkg -si --noconfirm
-    cd ..
-    rm -rf yay
-  else
-    echo "!!! yay is already installed..."
+    cd ../..
   fi
 }
 
 install_packages() {
-  echo ">>> installing packages..."
+  echo ""
+  echo ""
+  echo ""
+  echo ">>> INSTALLING PACKAGES AND DEPENDENCIES..."
+  echo ""
   for package in "${packages[@]}"; do
     yay -S --noconfirm --needed "$package"
   done
 }
 
 install_waybar() {
-  echo ">>> installing waybar..."
-  yay -R waybar
-  mkdir -p ~/Downloads
-  cd ~/Downloads
-  git clone https://github.com/Alexays/Waybar.git ./Waybar
-  cd ./Waybar
-  make
-  meson install -C build
-  cd ..
-  rm -rf ./Waybar
+  if ! command -v waybar &> /dev/null; then
+    echo ""
+    echo ""
+    echo ""
+    echo ">>> INSTALLING WAYBAR..."
+    echo ""
+    cd ./temp/waybar
+    make
+    sudo meson install -C build
+    cd ../..
+  fi
 }
 
 install_zsh_ohmyzsh_p10k() {
-  echo ">>> installing Zsh + Oh My Zsh + Powerlevel10k..."
+  echo ""
+  echo ""
+  echo ""
+  echo ">>> INSTALLING ZSH + OH MY ZSH + POWERLEVEL10K..."
+  echo ""
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -112,9 +136,18 @@ install_zsh_ohmyzsh_p10k() {
   chsh -s $(which zsh)
 }
 
-echo ">>> started"
+clean_temp() {
+  echo ""
+  echo ""
+  echo ""
+  echo ">>> CLEANING..."
+  echo ""
+  rm -rf ~/hyprland-dotfiles/temp
+}
 
-cd $HOME
+echo ">>> STARTED <<<"
+
+install_base
 
 install_yay
 
@@ -124,4 +157,6 @@ install_waybar
 
 install_zsh_ohmyzsh_p10k
 
-echo ">>> finished"
+clean_temp
+
+echo ">>> FINISHED <<<"
