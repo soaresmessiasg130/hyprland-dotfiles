@@ -62,8 +62,6 @@ packages=(
   hyprlock 
   hyprpicker 
 
-  piper 
-  vivaldi 
   bluez
   bluez-utils
   blueman

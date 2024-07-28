@@ -84,7 +84,8 @@ plugins=(
   emoji
   encode64
   zsh-autosuggestions
-  zsh-syntax-highlighting)
+  zsh-syntax-highlighting
+  asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,3 +124,7 @@ source $ZSH/oh-my-zsh.sh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 pfetch
+
+if [ -d "~/.asdf" ]; then
+  . "$HOME/.asdf/asdf.sh"
+fi
