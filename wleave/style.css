@@ -23,7 +23,7 @@ button:focus,
 button:active,
 button:hover {
   background-size: 128px;
-  border: 2px solid rgba(51, 204, 255, .8);
+  border: 2px solid rgba(238, 238, 238, 0.8);
   transition: 500ms;
   transition-property: background;
   opacity: 1;

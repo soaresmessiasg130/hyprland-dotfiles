@@ -5,7 +5,6 @@
   padding: 2px;
   margin: 2px;
   border-radius: 8px;
-  /* border: 1px solid rgba(255, 255, 255, .6); */
   background: transparent;
   box-shadow: none;
   color: rgba(255, 255, 255, .9);
@@ -14,7 +13,7 @@
 window {
   border: 2px solid;
   background: linear-gradient(5deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .1), rgba(0, 0, 0, .05));
-  border: 2px solid rgba(51, 204, 255, 1);
+  border: 2px solid rgb(238, 238, 238, 0.8);
 }
 
 #outer-box {
