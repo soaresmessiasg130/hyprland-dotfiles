@@ -128,6 +128,19 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 pfetch
 
-if [ -d "~/.asdf" ]; then
-  . "$HOME/.asdf/asdf.sh"
+if [[ -d ~/.asdf ]]; then
+  . ~/.asdf/asdf.sh
 fi
+
+if [[ -d ~/.asdf/plugins/dotnet ]]; then
+  . ~/.asdf/plugins/dotnet/set-dotnet-env.zsh
+fi
+
+if [[ -d ~/.asdf/plugins/golang ]]; then
+  . ~/.asdf/plugins/golang/set-env.zsh
+fi
+
+if [[ -d ~/.dotnet/tools ]]; then
+  export PATH="$PATH:$HOME/.dotnet/tools"
+fi
+
