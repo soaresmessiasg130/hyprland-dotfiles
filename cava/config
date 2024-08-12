@@ -177,16 +177,16 @@
 ; frame_delimiter = 10
 
 # sdl window size and position. -1,-1 is centered.
-; sdl_width = 1000
-; sdl_height = 500
-; sdl_x = -1
-; sdl_y= -1
-; sdl_full_screen = 0
+sdl_width = 1000
+sdl_height = 500
+sdl_x = -1
+sdl_y= -1
+sdl_full_screen = 0
 
 # set label on bars on the x-axis. Can be 'frequency' or 'none'. Default: 'none'
 # 'frequency' displays the lower cut off frequency of the bar above.
 # Only supported on ncurses and noncurses output.
-; xaxis = none
+; xaxis = frequency
 
 # enable alacritty synchronized updates. 1 = on, 0 = off
 # removes flickering in alacritty terminal emulator.
@@ -276,4 +276,4 @@
 2 = 1
 3 = 1 # midtone
 4 = 1
-5 = 1 # treble
+5 = 0 # treble
