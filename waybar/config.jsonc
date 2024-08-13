@@ -100,11 +100,15 @@
   },
   "custom/cpu_temp": {
     "exec": "sed 's/...$//' /sys/class/hwmon/hwmon2/temp1_input",
-    "format": "\uf2c8 {}°"
+    "format": "\uf2c8 {}°",
+    "tooltip": true,
+    "tooltip-format": "CPU Temp \uf2c8 {}°"
   },
   "custom/gpu_temp": {
-    "exec": "sed 's/...$//' /sys/class/hwmon/hwmon1/temp1_input",
-    "format": "\uf769 {}°"
+    "exec": "sed 's/...$//' /sys/class/drm/card1/device/hwmon/hwmon1/temp1_input",
+    "format": "\uf2c8 {}°",
+    "tooltip": true,
+    "tooltip-format": "GPU Temp \uf2c8 {}°"
   },
   "cava": {
     "framerate": 60,
