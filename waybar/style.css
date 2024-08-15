@@ -99,12 +99,16 @@ window#waybar.hidden {
 #system>*>*,
 #images>*>*,
 #gpu>*>*,
-#audio>*>*{
+#audio>*>* {
   padding: 0px 2px;
 }
 
 #tools>*>* {
   padding: 0px 3px;
+}
+
+#tray>*>* {
+  padding: 0px 2px;
 }
 
 #images {
