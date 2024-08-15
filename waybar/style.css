@@ -1,3 +1,4 @@
+/* GENERAL */
 * {
   font-family: "Noto Sans", "Font Awesome 6 Free", sans-serif;
   font-size: 11px;
@@ -10,6 +11,7 @@
   box-shadow: none;
 }
 
+/* WINDOW */
 window#waybar>box {
   background: rgba(0, 0, 0, .4);
   padding: 0px;
@@ -27,6 +29,7 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+/* MODULES */
 .modules-left,
 .modules-center,
 .modules-right {
@@ -47,42 +50,7 @@ window#waybar.hidden {
   border-radius: 16px;
 }
 
-#center-left,
-#center-right,
-#window,
-#right-items {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0px;
-  border: none;
-  padding: 0px 2px;
-}
-
-#center-left>*>*,
-#center-right>*>*,
-#window>*>*,
-#right-items>*>* {
-  padding: 0px 5px;
-}
-
-#center-right {
-  padding: 0px 1px;
-}
-
-#center-right>*>* {
-  padding: 0px 3px;
-}
-
-#audio,
-#left-items {
-  padding: 0px 6px;
-}
-
-#audio>*>*,
-#left-items>*>* {
-  padding: 0px 3px;
-}
-
+/* WORKSPACES */
 #workspaces {
   padding: 0px;
 }
@@ -113,6 +81,46 @@ window#waybar.hidden {
   background: linear-gradient(5deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .5), rgba(255, 255, 255, .4));
   transition: 500ms;
   transition-property: background;
+}
+
+/* STYLES */
+#window,
+#tools,
+#indicators {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+  padding: 0px 3px;
+}
+
+#indicators>*>*,
+#window>*>*,
+#system>*>*,
+#images>*>*,
+#gpu>*>*,
+#audio>*>*{
+  padding: 0px 2px;
+}
+
+#tools>*>* {
+  padding: 0px 3px;
+}
+
+#images {
+  background: linear-gradient(5deg, rgba(1, 200, 219, .3), rgba(1, 200, 219, .05), rgba(1, 200, 219, .3));
+}
+
+#system {
+  background: linear-gradient(5deg, rgba(0, 255, 0, .3), rgba(0, 255, 0, .05), rgba(0, 255, 0, .3));
+}
+
+#gpu {
+  background: linear-gradient(5deg, rgba(0, 0, 255, .3), rgba(0, 0, 255, .05), rgba(0, 0, 255, .3));
+}
+
+#clock {
+  background: linear-gradient(5deg, rgba(255, 0, 0, .3), rgba(255, 0, 0, .05), rgba(255, 0, 0, .3));
 }
 
 tooltip>*>* {

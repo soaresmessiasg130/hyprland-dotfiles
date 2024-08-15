@@ -4,21 +4,21 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": [
-    "custom/apps",
-    "group/center-left",
-    "group/left-items",
+    "group/images",
+    "group/tools",
+    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "group/system",
+    "group/gpu"
   ],
   "modules-right": [
-    "group/right-items",
+    "group/indicators",
     "group/audio",
-    "group/center-right",
     "clock"
   ],
-  "group/left-items": {
+  "group/images": {
     "orientation": "horizontal",
     "modules": [
       "image#archlinux",
@@ -26,9 +26,10 @@
       "user"
     ]
   },
-  "group/center-left": {
+  "group/tools": {
     "orientation": "horizontal",
     "modules": [
+      "custom/apps",
       "custom/picker",
       "custom/random-theme",
       "custom/cliphist",
@@ -36,16 +37,7 @@
       "custom/lock"
     ]
   },
-  "group/center-right": {
-    "orientation": "horizontal",
-    "modules": [
-      "cpu",
-      "memory",
-      "custom/cpu_temp",
-      "custom/gpu_temp"
-    ]
-  },
-  "group/right-items": {
+  "group/indicators": {
     "orientation": "horizontal",
     "modules": [
       "tray",
@@ -62,9 +54,29 @@
       "pulseaudio"
     ]
   },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/cpu_label",
+      "cpu",
+      "custom/cpu_temp",
+      "memory",
+      "custom/root"
+    ]
+  },
+  "group/gpu": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/gpu_label",
+      "custom/gpu",
+      "custom/gpu_temp",
+      "custom/gpu_mem",
+      "custom/gpu_freq"
+    ]
+  },
   "hyprland/window": {
     "format": "{title}",
-    "max-length": 40,
+    "max-length": 30,
     "separate-outputs": true,
     "icon": true,
     "icon-size": 16
@@ -82,14 +94,17 @@
     "icon-spacing": 8
   },
   "tray": {
-    "icon-size": 18,
-    "spacing": 8,
+    "icon-size": 17,
+    "spacing": 1,
     "reverse-direction": true
   },
   "clock": {
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "format": "{:%h %d  %H:%M}",
     "format-alt": "{:%h %d  %H:%M}"
+  },
+  "custom/cpu_label": {
+    "format": "SYSTEM"
   },
   "cpu": {
     "format": "\uf2db {usage}%",
@@ -99,16 +114,49 @@
     "format": "\uf538 {}%"
   },
   "custom/cpu_temp": {
-    "exec": "sed 's/...$//' /sys/class/hwmon/hwmon2/temp1_input",
-    "format": "\uf2c8 {}°",
+    "exec": "sensors k10temp-pci-00c3 | grep 'Tctl' | awk '{print int($2)}' | sed 's\/+\/\/'",
+    "format": "\uf2c8 {0}°",
     "tooltip": true,
-    "tooltip-format": "CPU Temp \uf2c8 {}°"
+    "tooltip-format": "CPU Temp \uf2c8 {}°",
+    "restart-interval": 1
+  },
+  "custom/root": {
+    "exec": "df -h / | awk 'NR==2 {print $3\"/\"$2}'",
+    "format": "\uf1c0 {}",
+    "tooltip": true,
+    "tooltip-format": "Disk Usage \uf1c0 {}",
+    "restart-interval": 30
+  },
+  "custom/gpu_label": {
+    "format": "GPU"
+  },
+  "custom/gpu": {
+    "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+    "format": "\uf2db {}%",
+    "tooltip": true,
+    "tooltip-format": "GPU \uf2db {}%",
+    "restart-interval": 1
   },
   "custom/gpu_temp": {
-    "exec": "sed 's/...$//' /sys/class/drm/card1/device/hwmon/hwmon1/temp1_input",
+    "exec": "sensors amdgpu-pci-1000 | grep 'edge' | awk '{print int($2)}' | sed 's/+//'",
     "format": "\uf2c8 {}°",
     "tooltip": true,
-    "tooltip-format": "GPU Temp \uf2c8 {}°"
+    "tooltip-format": "GPU Temp \uf2c8 {}°",
+    "restart-interval": 1
+  },
+  "custom/gpu_freq": {
+    "exec": "cat /sys/class/hwmon/hwmon1/device/pp_dpm_sclk | grep '\\*' | cut -d' ' -f2",
+    "format": "\uf625 {}",
+    "tooltip": true,
+    "tooltip-format": "GPU Freq \uf625 {}",
+    "restart-interval": 1
+  },
+  "custom/gpu_mem": {
+    "exec": "cat /sys/class/hwmon/hwmon1/device/mem_busy_percent",
+    "format": "\uf538 {}%",
+    "tooltip": true,
+    "tooltip-format": "GPU Memory \uf2db {}%",
+    "restart-interval": 1
   },
   "cava": {
     "framerate": 60,
@@ -123,7 +171,7 @@
     "noise_reduction": 0.5,
     "input_delay": 8,
     "stereo": false,
-    "bars": 24,
+    "bars": 18,
     "format-icons": [
       // ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
       " ",
