@@ -127,7 +127,8 @@ window#waybar.hidden {
   background: linear-gradient(5deg, rgba(255, 0, 0, .3), rgba(255, 0, 0, .05), rgba(255, 0, 0, .3));
 }
 
-tooltip>*>* {
+tooltip>*>*,
+#tray window decoration {
   padding: 4px 8px;
   background: rgba(0, 0, 0, .8);
   color: #dddddd;
