@@ -1,0 +1,46 @@
+* {
+  background: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  line-height: 1.1em !important;
+  scrollbar-width: none !important;
+}
+
+img {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+img.yt-img-shadow {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+img.emoji.yt-formatted-string.yt-live-chat-text-message-renderer {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+div.yt-live-chat-action-panel-renderer {
+  display: none !important;
+}
+
+yt-live-chat-viewer-engagement-message-renderer {
+  display: none !important;
+}
+
+yt-live-chat-author-chip[is-highlighted] #author-name.owner.yt-live-chat-author-chip,
+#author-name.owner.yt-live-chat-author-chip {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+yt-live-chat-author-chip #author-name.moderator.yt-live-chat-author-chip {
+  color: rgba(0, 238, 97, 0.8) !important;
+}
+
+yt-live-chat-author-chip #author-name.yt-live-chat-author-chip {
+  color: rgba(0, 173, 238, 0.8) !important;
+}
