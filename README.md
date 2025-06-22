@@ -87,3 +87,10 @@ Reboot your system:
 ### Wallpapers
 
 - you need to configure the wallpapers, running `waypaper`;
+
+
+### Screenshots
+
+[Screenshot 1](./assets/screenshot-1.png)
+
+[Screenshot 2](./assets/screenshot-2.png)
