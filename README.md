@@ -57,13 +57,12 @@ Reboot your system:
 - Enabled for all monitors;
 - Left:
   - Active window;
-  - Apps drawing;
+  - Tools;
+  - Workspaces;
   - Logos:
     - Arch Linux, Hyprland and User logos:
       - change your user logo saving your in /assets as user.png then reboot your system;
 - Center:
-  - Tools;
-  - Workspaces;
   - System Status;
     - CPU %;
     - MEMORY %;
@@ -75,6 +74,7 @@ Reboot your system:
       - then run ```killall waybar && waybar &```;
       - finally, reboot your system;
 - Right:
+  - System trays;
   - Network:
     - to set network interface, uncomment ```"interface"``` on /waybar/config.jsonc;
   - Bluetooth:
