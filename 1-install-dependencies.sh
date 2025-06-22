@@ -61,6 +61,7 @@ packages=(
   hypridle 
   hyprlock 
   hyprpicker 
+  waybar
 
   bluez
   bluez-utils
@@ -76,9 +77,6 @@ install_base() {
   mkdir -p ./temp
   if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git ./temp/yay
-  fi
-  if ! command -v waybar &> /dev/null; then
-    git clone https://github.com/Alexays/Waybar.git ./temp/waybar
   fi
   sudo pacman -S --noconfirm --needed git base-devel
 }
@@ -105,20 +103,6 @@ install_packages() {
   for package in "${packages[@]}"; do
     yay -S --noconfirm --needed "$package"
   done
-}
-
-install_waybar() {
-  if ! command -v waybar &> /dev/null; then
-    echo ""
-    echo ""
-    echo ""
-    echo ">>> INSTALLING WAYBAR..."
-    echo ""
-    cd ./temp/waybar
-    make
-    sudo meson install -C build
-    cd ../..
-  fi
 }
 
 install_zsh_ohmyzsh_p10k() {
@@ -150,8 +134,6 @@ install_base
 install_yay
 
 install_packages
-
-install_waybar
 
 install_zsh_ohmyzsh_p10k
 
