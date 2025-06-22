@@ -290,7 +290,7 @@
   },
   "custom/random-theme": {
     "format": "\uf53f",
-    "on-click": "waypaper-engine random",
+    "on-click": "waypaper --random",
     "tooltip": true,
     "tooltip-format": "Random theme"
   },

@@ -56,7 +56,7 @@ packages=(
   cava 
   swaync 
   hyprpaper 
-  waypaper-engine 
+  waypaper
   wleave-git 
   hypridle 
   hyprlock 
