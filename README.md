@@ -91,6 +91,6 @@ Reboot your system:
 
 ### Screenshots
 
-[Screenshot 1](./assets/screenshot-1.png)
+![Screenshot 1](./assets/screenshot-1.png)
 
-[Screenshot 2](./assets/screenshot-2.png)
+![Screenshot 2](./assets/screenshot-2.png)
