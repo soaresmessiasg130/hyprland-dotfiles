@@ -52,6 +52,7 @@ packages=(
   pfetch 
   nano-syntax-highlighting 
   zsh
+  google-chrome-stable
 
   cava 
   swaync 
@@ -116,6 +117,15 @@ install_zsh_ohmyzsh_p10k() {
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   chsh -s $(which zsh)
+}
+
+gtk_configuration() {
+  echo ""
+  echo ""
+  echo ""
+  echo ">>> APPLYING GTK DARK THEME"
+  echo ""
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 }
 
 clean_temp() {

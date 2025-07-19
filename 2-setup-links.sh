@@ -19,6 +19,7 @@ declare -A source_target_paths=(
   ["$HOME/.config/waybar"]="$HOME/hyprland-dotfiles/waybar"
   ["$HOME/.config/wofi"]="$HOME/hyprland-dotfiles/wofi"
   ["$HOME/.config/gtk-3.0"]="$HOME/hyprland-dotfiles/gtk-3.0"
+  ["$HOME/.config/gtk-4.0"]="$HOME/hyprland-dotfiles/gtk-4.0"
   ["$HOME/.config/qt5ct"]="$HOME/hyprland-dotfiles/qt5ct"
   ["$HOME/.config/wleave"]="$HOME/hyprland-dotfiles/wleave"
   ["$HOME/.zshrc"]="$HOME/hyprland-dotfiles/zsh/.zshrc"
