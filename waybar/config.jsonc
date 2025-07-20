@@ -10,8 +10,8 @@
     "hyprland/window"
   ],
   "modules-center": [
-    "group/system",
-    "group/gpu"
+    "group/system"
+    // "group/gpu"
   ],
   "modules-right": [
     "group/indicators",
@@ -173,6 +173,14 @@
     "stereo": false,
     "bars": 18,
     "format-icons": [
+      // "▁",
+      // "▂",
+      // "▃",
+      // "▄",
+      // "▅",
+      // "▆",
+      // "▇",
+      // "█"
       // ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
       " ",
       ".",
