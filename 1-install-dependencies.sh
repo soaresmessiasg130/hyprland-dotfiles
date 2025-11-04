@@ -73,7 +73,7 @@ install_base() {
   echo ""
   echo ""
   echo ""
-  echo ">>> DOWNLOADING YAY AND WAYBAR, AND INSTALL BASE..."
+  echo ">>> DOWNLOADING YAY, AND INSTALL BASE..."
   echo ""
   mkdir -p ./temp
   if ! command -v yay &> /dev/null; then
