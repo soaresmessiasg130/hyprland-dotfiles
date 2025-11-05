@@ -171,22 +171,9 @@
     "noise_reduction": 0.5,
     "input_delay": 8,
     "stereo": false,
-    "bars": 18,
+    "bars": 32,
     "format-icons": [
-      // "▁",
-      // "▂",
-      // "▃",
-      // "▄",
-      // "▅",
-      // "▆",
-      // "▇",
-      // "█"
-      // ▁ ▂ ▃ ▄ ▅ ▆ ▇ █
       " ",
-      ".",
-      ".",
-      ".",
-      ".",
       ".",
       ":",
       ":",
@@ -297,7 +284,7 @@
     "tooltip-format": "Notification"
   },
   "custom/random-theme": {
-    "format": "\uf53f",
+    "format": "\uf55d",
     "on-click": "waypaper --random",
     "tooltip": true,
     "tooltip-format": "Random theme"
