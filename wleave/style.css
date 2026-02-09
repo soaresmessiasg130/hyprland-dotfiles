@@ -10,9 +10,7 @@ button {
   color: #fff;
   font-weight: bold;
   font-size: 16px;
-  background-size: 96px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: 0px;
   box-shadow: 0 0 8px -8px rgba(0, 0, 0, 1);
   border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -22,7 +20,7 @@ button {
 button:focus,
 button:active,
 button:hover {
-  background-size: 128px;
+  background-size: 0px;
   border: 2px solid rgba(238, 238, 238, 0.8);
   transition: 500ms;
   transition-property: background;
