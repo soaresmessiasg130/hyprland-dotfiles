@@ -36,6 +36,10 @@ packages=(
   noto-fonts-emoji
   noto-fonts-extra
   ttf-font-awesome
+  ttf-jetbrains-mono
+  ttf-fira-code
+  ttf-ms-fonts
+  otf-font-awesome
 
   polkit-kde-agent 
   qt5-wayland 
@@ -52,7 +56,7 @@ packages=(
   pfetch 
   nano-syntax-highlighting 
   zsh
-  google-chrome-stable
+  google-chrome
 
   cava 
   swaync 
@@ -62,7 +66,6 @@ packages=(
   hypridle 
   hyprlock 
   hyprpicker 
-  waybar
 
   bluez
   bluez-utils
@@ -146,6 +149,8 @@ install_yay
 install_packages
 
 install_zsh_ohmyzsh_p10k
+
+gtk_configuration
 
 clean_temp
 
