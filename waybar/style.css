@@ -1,6 +1,6 @@
 /* GENERAL */
 * {
-  font-family: "Font Awesome 5 Free";
+  font-family: "JetBrains Mono";
   font-size: 11px;
   font-weight: 700;
   padding: 0px;
@@ -99,16 +99,10 @@ window#waybar.hidden {
 #system>*>*,
 #images>*>*,
 #gpu>*>*,
-#audio>*>* {
-  padding: 0px 2px;
-}
-
-#tools>*>* {
-  padding: 0px 3px;
-}
-
+#audio>*>*,
+#tools>*>*,
 #tray>*>* {
-  padding: 0px 2px;
+  padding: 0px 4px;
 }
 
 #images {

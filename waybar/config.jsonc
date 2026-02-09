@@ -11,7 +11,6 @@
   ],
   "modules-center": [
     "group/system"
-    // "group/gpu"
   ],
   "modules-right": [
     "group/indicators",
@@ -57,7 +56,6 @@
   "group/system": {
     "orientation": "horizontal",
     "modules": [
-      "custom/cpu_label",
       "cpu",
       "custom/cpu_temp",
       "memory",
@@ -100,24 +98,24 @@
   },
   "clock": {
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "format": "{:%h %d  %H:%M}",
-    "format-alt": "{:%h %d  %H:%M}"
-  },
-  "custom/cpu_label": {
-    "format": "SYSTEM"
+    "format": "{:%h %d, %H:%M}",
+    "format-alt": "{:%h %d, %H:%M}"
   },
   "cpu": {
     "format": "\uf2db {usage}%",
     "tooltip": true
-  },
-  "memory": {
-    "format": "\uf538 {}%"
   },
   "custom/cpu_temp": {
     "exec": "sensors k10temp-pci-00c3 | grep 'Tctl' | awk '{print int($2)}' | sed 's\/+\/\/'",
     "format": "\uf2c8 {0}°",
     "tooltip": true,
     "tooltip-format": "CPU Temp \uf2c8 {}°",
+    "restart-interval": 1
+  },
+  "memory": {
+    "format": "\uf538 {}%",
+    "tooltip": true,
+    "tooltip-format": "RAM Memory \uf538 {}",
     "restart-interval": 1
   },
   "custom/root": {
@@ -168,33 +166,34 @@
     "bar_delimiter": 0,
     "monstercat": true,
     "waves": true,
-    "noise_reduction": 0.5,
+    "noise_reduction": 0.7,
     "input_delay": 8,
     "stereo": false,
-    "bars": 32,
+    "bars": 8,
     "format-icons": [
       " ",
+      " ",
+      " ",
+      ".",
+      ".",
       ".",
       ":",
       ":",
       ":",
-      ":",
       "i",
       "i",
       "i",
-      "i",
-      "l",
       "l",
       "l",
       "l"
     ]
   },
   "pulseaudio": {
-    "scroll-step": 2,
+    "scroll-step": 1,
     "on-click": "pavucontrol",
-    "format": "{icon} {volume}% {format_source}",
-    "format-bluetooth": "{icon} \uf294 {volume}% {format_source}",
-    "format-bluetooth-muted": "{icon} \uf294 \uf6a9 {format_source}",
+    "format": "\uf590 {volume}% {format_source}",
+    "format-bluetooth": "\uf294 {volume}% {format_source}",
+    "format-bluetooth-muted": "\uf294 \uf6a9 {format_source}",
     "format-muted": "\uf6a9 {format_source}",
     "format-source": "\uf130 {volume}%",
     "format-source-muted": "\uf6a9",
@@ -211,12 +210,12 @@
     }
   },
   "network": {
-    // "interface": "wlp2s0",
+    "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "\uf1eb",
-    "format-ethernet": "\uf796",
-    "format-disconnected": "\uf127",
-    "tooltip-format": "{ifname} via {gwaddr} \uf6ff",
+    "format-wifi": "\uf1eb ",
+    "format-ethernet": "\uf796 ",
+    "format-disconnected": "\uf127 ",
+    "tooltip-format": "{ifname} via {gwaddr} \uf6ff ",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname}",
     "tooltip-format-disconnected": "Disconnected",
@@ -292,14 +291,16 @@
   "image#archlinux": {
     "path": "/tmp/hyprland-dotfiles/assets/archlinux-logo.png",
     "size": 16,
+    "interval": 5,
     "tooltip": true,
     "tooltip-format": "Arch Linux"
   },
   "image#hyprland": {
     "path": "/tmp/hyprland-dotfiles/assets/hyprland-logo.png",
     "size": 16,
+    "interval": 5,
     "tooltip": true,
-    "tooltip-format": "Arch Linux"
+    "tooltip-format": "Hyprland"
   },
   "user": {
     "format": "  {user}",
