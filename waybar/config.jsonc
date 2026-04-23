@@ -49,7 +49,7 @@
   "group/audio": {
     "orientation": "horizontal",
     "modules": [
-      "cava",
+      // "cava",
       "pulseaudio"
     ]
   },
