@@ -1,5 +1,7 @@
+@import "./mocha.css";
+
 * {
-  font-family: sans-serif;
+  font-family: "JetBrains Mono", sans-serif;
   font-size: 14px;
   font-weight: 600;
   padding: 2px;
@@ -7,17 +9,17 @@
   border-radius: 8px;
   background: transparent;
   box-shadow: none;
-  color: rgba(255, 255, 255, .9);
+  color: @text;
 }
 
 window {
-  border: 2px solid;
-  background: linear-gradient(5deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .1), rgba(0, 0, 0, .05));
-  border: 2px solid rgb(238, 238, 238, 0.8);
+  border: 2px solid @mauve;
+  background-color: @base;
 }
 
 #outer-box {
   padding: 16px;
+  background-color: @base;
 }
 
 #scroll {
@@ -42,26 +44,27 @@ window {
 }
 
 #input {
-  background: rgba(255, 255, 255, .1);
-  border: 2px solid rgba(255, 255, 255, .6);
+  background-color: @surface0;
+  border: 2px solid @mauve;
   padding: 18px 8px;
-  margin: 0px;
+  margin: 8px 0px;
   font-size: 24px;
-  color: #fff;
+  color: @text;
 }
 
 #entry {
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid transparent;
   background: transparent;
   padding: 4px 16px;
   margin-top: 4px;
   font-size: 20px;
-  color: #fff;
+  color: @subtext0;
 }
 
 #entry:selected {
-  border: 2px solid rgba(255, 255, 255, .6);
-  background: rgba(255, 255, 255, .1);
+  border: 2px solid @mauve;
+  background-color: @surface1;
+  color: @lavender;
 }
 
 #img {

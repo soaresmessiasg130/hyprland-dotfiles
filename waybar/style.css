@@ -1,3 +1,5 @@
+@import "./mocha.css";
+
 /* GENERAL */
 * {
   font-family: "JetBrains Mono";
@@ -6,14 +8,14 @@
   padding: 0px;
   border-radius: 16px;
   border: none;
-  color: #ffffff;
+  color: @text;
   background: transparent;
   box-shadow: none;
 }
 
 /* WINDOW */
 window#waybar>box {
-  background: rgba(0, 0, 0, .4);
+  background: alpha(@base, 0.4);
   padding: 0px;
   border: none;
   border-radius: 0px;
@@ -43,8 +45,8 @@ window#waybar.hidden {
 .modules-left>widget>*,
 .modules-center>widget>*,
 .modules-right>widget>* {
-  background: linear-gradient(5deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05), rgba(255, 255, 255, .15));
-  box-shadow: 0 0 8px -8px rgba(0, 0, 0, 1);
+  background: linear-gradient(5deg, alpha(@text, 0.15), alpha(@text, 0.05), alpha(@text, 0.15));
+  box-shadow: 0 0 8px -8px @crust;
   border-radius: 16px;
 }
 
@@ -64,19 +66,19 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  background: linear-gradient(5deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .4), rgba(255, 255, 255, .5));
+  background: linear-gradient(5deg, alpha(@mauve, 0.5), alpha(@mauve, 0.4), alpha(@mauve, 0.5));
   transition: 500ms;
   transition-property: background;
 }
 
 #workspaces button:hover {
-  background: linear-gradient(5deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, .2), rgba(255, 255, 255, .3));
+  background: linear-gradient(5deg, alpha(@text, 0.3), alpha(@text, 0.2), alpha(@text, 0.3));
   transition: 500ms;
   transition-property: background;
 }
 
 #workspaces button.active:hover {
-  background: linear-gradient(5deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .5), rgba(255, 255, 255, .4));
+  background: linear-gradient(5deg, alpha(@mauve, 0.4), alpha(@mauve, 0.5), alpha(@mauve, 0.4));
   transition: 500ms;
   transition-property: background;
 }
@@ -104,29 +106,29 @@ window#waybar.hidden {
 }
 
 #images {
-  background: linear-gradient(5deg, rgba(1, 200, 219, .3), rgba(1, 200, 219, .05), rgba(1, 200, 219, .3));
+  background: linear-gradient(5deg, alpha(@blue, 0.3), alpha(@blue, 0.05), alpha(@blue, 0.3));
 }
 
 #system {
-  background: linear-gradient(5deg, rgba(0, 255, 0, .3), rgba(0, 255, 0, .05), rgba(0, 255, 0, .3));
+  background: linear-gradient(5deg, alpha(@green, 0.3), alpha(@green, 0.05), alpha(@green, 0.3));
 }
 
 #gpu {
-  background: linear-gradient(5deg, rgba(0, 0, 255, .3), rgba(0, 0, 255, .05), rgba(0, 0, 255, .3));
+  background: linear-gradient(5deg, alpha(@mauve, 0.3), alpha(@mauve, 0.05), alpha(@mauve, 0.3));
 }
 
 #clock {
-  background: linear-gradient(5deg, rgba(255, 0, 0, .3), rgba(255, 0, 0, .05), rgba(255, 0, 0, .3));
+  background: linear-gradient(5deg, alpha(@red, 0.3), alpha(@red, 0.05), alpha(@red, 0.3));
 }
 
 tooltip>*>*,
 #tray window decoration {
   padding: 4px 8px;
-  background: rgba(0, 0, 0, .8);
-  color: #dddddd;
+  background: alpha(@crust, 0.8);
+  color: @text;
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 0 8px -8px black;
   border-radius: 16px;
-  border: 2px solid rgba(89, 89, 89, 0.8);
+  border: 2px solid @surface1;
 }
