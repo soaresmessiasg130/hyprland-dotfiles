@@ -1,9 +1,11 @@
 # hyprland-dotfiles
+
 Arch Linux + Hyprland
 
 ## Before install
-    
+
 I recomended to install Hyprland with:
+
 - Pipewire: as a server audio;
 - GDM: as a display manager(this will install GNOME Desktop too, but GDM its pretty);
 - Kernel linux or linux-lts;
@@ -87,7 +89,6 @@ Reboot your system:
 ### Wallpapers
 
 - you need to configure the wallpapers, running `waypaper`;
-
 
 ### Screenshots
 
