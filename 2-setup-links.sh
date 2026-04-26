@@ -26,7 +26,6 @@ declare -A source_target_paths=(
   ["$HOME/.config/wleave"]="$SCRIPT_DIR/wleave"
   ["$HOME/.zshrc"]="$SCRIPT_DIR/zsh/.zshrc"
   ["$HOME/.p10k.zsh"]="$SCRIPT_DIR/zsh/.p10k.zsh"
-  ["$HOME/.config/hypr/assets"]="$SCRIPT_DIR/assets"
 )
 
 backup_dir="$HOME/.config-backups"

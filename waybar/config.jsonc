@@ -289,14 +289,14 @@
     "tooltip-format": "Random theme"
   },
   "image#archlinux": {
-    "path": "/home/msz/.config/hypr/assets/archlinux-logo.png",
+    "path": "/tmp/hyprland-dotfiles/assets/archlinux-logo.png",
     "size": 16,
     "interval": 5,
     "tooltip": true,
     "tooltip-format": "Arch Linux"
   },
   "image#hyprland": {
-    "path": "/home/msz/.config/hypr/assets/hyprland-logo.png",
+    "path": "/tmp/hyprland-dotfiles/assets/hyprland-logo.png",
     "size": 16,
     "interval": 5,
     "tooltip": true,
@@ -304,7 +304,7 @@
   },
   "user": {
     "format": "  {user}",
-    "avatar": "/home/msz/.config/hypr/assets/user.png",
+    "avatar": "/tmp/hyprland-dotfiles/assets/user.png",
     "width": 16,
     "height": 18,
     "icon": true
