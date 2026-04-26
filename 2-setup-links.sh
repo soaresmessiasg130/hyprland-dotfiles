@@ -58,4 +58,11 @@ for target in "${!source_target_paths[@]}"; do
   echo ">>> linked $source -> $target"
 done
 
+# Optionally link .zshrc.local if it exists in the repo
+if [ -f "$SCRIPT_DIR/zsh/.zshrc.local" ]; then
+  rm -rf "$HOME/.zshrc.local"
+  ln -s "$SCRIPT_DIR/zsh/.zshrc.local" "$HOME/.zshrc.local"
+  echo ">>> linked $SCRIPT_DIR/zsh/.zshrc.local -> $HOME/.zshrc.local"
+fi
+
 echo ">>> finished"

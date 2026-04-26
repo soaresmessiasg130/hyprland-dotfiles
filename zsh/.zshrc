@@ -144,3 +144,6 @@ if [[ -d ~/.dotnet/tools ]]; then
   export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
