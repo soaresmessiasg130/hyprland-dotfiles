@@ -70,31 +70,34 @@ packages=(
   bluez
   bluez-utils
   blueman
+  libnotify
+  brightnessctl
 )
+
+# Get the directory where the script is located
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
 install_base() {
   echo ""
   echo ""
   echo ""
-  echo ">>> DOWNLOADING YAY, AND INSTALL BASE..."
+  echo ">>> INSTALLING BASE-DEVEL AND GIT..."
   echo ""
-  mkdir -p ./temp
-  if ! command -v yay &> /dev/null; then
-    git clone https://aur.archlinux.org/yay.git ./temp/yay
-  fi
   sudo pacman -S --noconfirm --needed git base-devel
 }
 
-install_yay() {
-  if ! command -v yay &> /dev/null; then
+install_aur_helper() {
+  if ! command -v yay &> /dev/null && ! command -v paru &> /dev/null; then
     echo ""
     echo ""
     echo ""
-    echo ">>> INSTALLING YAY..."
+    echo ">>> DOWNLOADING YAY..."
     echo ""
-    cd ./temp/yay
+    mkdir -p "$SCRIPT_DIR/temp"
+    git clone https://aur.archlinux.org/yay.git "$SCRIPT_DIR/temp/yay"
+    cd "$SCRIPT_DIR/temp/yay"
     makepkg -si --noconfirm
-    cd ../..
+    cd "$SCRIPT_DIR"
   fi
 }
 
@@ -104,8 +107,16 @@ install_packages() {
   echo ""
   echo ">>> INSTALLING PACKAGES AND DEPENDENCIES..."
   echo ""
+  
+  # Determine which AUR helper to use
+  if command -v paru &> /dev/null; then
+    HELPER="paru"
+  else
+    HELPER="yay"
+  fi
+
   for package in "${packages[@]}"; do
-    yay -S --noconfirm --needed "$package"
+    $HELPER -S --noconfirm --needed "$package"
   done
 }
 
@@ -115,11 +126,25 @@ install_zsh_ohmyzsh_p10k() {
   echo ""
   echo ">>> INSTALLING ZSH + OH MY ZSH + POWERLEVEL10K..."
   echo ""
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  chsh -s $(which zsh)
+  if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  fi
+  
+  ZSH_CUSTOM_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+  
+  if [ ! -d "$ZSH_CUSTOM_DIR/themes/powerlevel10k" ]; then
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM_DIR/themes/powerlevel10k"
+  fi
+  
+  if [ ! -d "$ZSH_CUSTOM_DIR/plugins/zsh-autosuggestions" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM_DIR/plugins/zsh-autosuggestions"
+  fi
+  
+  if [ ! -d "$ZSH_CUSTOM_DIR/plugins/zsh-syntax-highlighting" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM_DIR/plugins/zsh-syntax-highlighting"
+  fi
+  
+  sudo chsh -s $(which zsh) $(whoami)
 }
 
 gtk_configuration() {
@@ -137,21 +162,16 @@ clean_temp() {
   echo ""
   echo ">>> CLEANING..."
   echo ""
-  rm -rf ~/hyprland-dotfiles/temp
+  rm -rf "$SCRIPT_DIR/temp"
 }
 
 echo ">>> STARTED <<<"
 
 install_base
-
-install_yay
-
+install_aur_helper
 install_packages
-
 install_zsh_ohmyzsh_p10k
-
 gtk_configuration
-
 clean_temp
 
 echo ">>> FINISHED <<<"
