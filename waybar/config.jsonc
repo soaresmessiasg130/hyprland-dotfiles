@@ -57,7 +57,7 @@
     "orientation": "horizontal",
     "modules": [
       "cpu",
-      "custom/cpu_temp",
+      "temperature",
       "memory",
       "custom/root"
     ]
@@ -105,12 +105,12 @@
     "format": "\uf2db {usage}%",
     "tooltip": true
   },
-  "custom/cpu_temp": {
-    "exec": "sensors k10temp-pci-00c3 | grep 'Tctl' | awk '{print int($2)}' | sed 's\/+\/\/'",
-    "format": "\uf2c8 {0}°",
-    "tooltip": true,
-    "tooltip-format": "CPU Temp \uf2c8 {}°",
-    "restart-interval": 1
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "{temperatureC}°C \uf2c7",
+    "format": "{temperatureC}°C \uf2c9"
   },
   "memory": {
     "format": "\uf538 {}%",
@@ -289,14 +289,14 @@
     "tooltip-format": "Random theme"
   },
   "image#archlinux": {
-    "path": "/tmp/hyprland-dotfiles/assets/archlinux-logo.png",
+    "path": "/home/msz/.config/hypr/assets/archlinux-logo.png",
     "size": 16,
     "interval": 5,
     "tooltip": true,
     "tooltip-format": "Arch Linux"
   },
   "image#hyprland": {
-    "path": "/tmp/hyprland-dotfiles/assets/hyprland-logo.png",
+    "path": "/home/msz/.config/hypr/assets/hyprland-logo.png",
     "size": 16,
     "interval": 5,
     "tooltip": true,
@@ -304,7 +304,7 @@
   },
   "user": {
     "format": "  {user}",
-    "avatar": "/tmp/hyprland-dotfiles/assets/user.png",
+    "avatar": "/home/msz/.config/hypr/assets/user.png",
     "width": 16,
     "height": 18,
     "icon": true
