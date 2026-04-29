@@ -13,13 +13,14 @@
 }
 
 window {
-  border: 2px solid @mauve;
-  background-color: @base;
+  border: 1px solid alpha(@mauve, 0.4);
+  background-color: alpha(@base, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 #outer-box {
   padding: 16px;
-  background-color: @base;
+  background-color: transparent;
 }
 
 #scroll {
