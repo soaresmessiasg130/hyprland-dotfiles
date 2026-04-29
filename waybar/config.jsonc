@@ -15,6 +15,7 @@
   "modules-right": [
     "group/indicators",
     "group/audio",
+    "mpris",
     "clock"
   ],
   "group/images": {
@@ -49,7 +50,7 @@
   "group/audio": {
     "orientation": "horizontal",
     "modules": [
-      // "cava",
+      "custom/cava",
       "pulseaudio"
     ]
   },
@@ -156,37 +157,10 @@
     "tooltip-format": "GPU Memory \uf2db {}%",
     "restart-interval": 1
   },
-  "cava": {
-    "framerate": 60,
-    "autosens": 1,
-    "sleep_timer": 1,
-    "hide_on_silence": true,
-    "method": "pipewire",
-    "reverse": true,
-    "bar_delimiter": 0,
-    "monstercat": true,
-    "waves": true,
-    "noise_reduction": 0.7,
-    "input_delay": 8,
-    "stereo": false,
-    "bars": 8,
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      ".",
-      ".",
-      ".",
-      ":",
-      ":",
-      ":",
-      "i",
-      "i",
-      "i",
-      "l",
-      "l",
-      "l"
-    ]
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/waybar-cava.sh",
+    "format": "{}",
+    "tooltip": false
   },
   "pulseaudio": {
     "scroll-step": 1,
@@ -308,5 +282,22 @@
     "width": 16,
     "height": 18,
     "icon": true
+  },
+  "mpris": {
+    "format": "{player_icon} {title} - {artist}",
+    "format-paused": "{status_icon} <i>{title} - {artist}</i>",
+    "player-icons": {
+      "default": "󰎆",
+      "spotify": "",
+      "firefox": "",
+      "chrome": ""
+    },
+    "status-icons": {
+      "paused": "󰏤"
+    },
+    "max-length": 30,
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "on-click": "playerctl play-pause"
   }
 }

@@ -118,8 +118,21 @@ window#waybar.hidden {
   background: linear-gradient(5deg, alpha(@mauve, 0.3), alpha(@mauve, 0.05), alpha(@mauve, 0.3));
 }
 
+#audio {
+  background: linear-gradient(5deg, alpha(@peach, 0.3), alpha(@peach, 0.05), alpha(@peach, 0.3));
+}
+
+#custom-cava {
+  color: @peach;
+}
+
 #clock {
   background: linear-gradient(5deg, alpha(@red, 0.3), alpha(@red, 0.05), alpha(@red, 0.3));
+}
+
+#mpris {
+  background: linear-gradient(5deg, alpha(@lavender, 0.3), alpha(@lavender, 0.05), alpha(@lavender, 0.3));
+  padding: 0px 12px;
 }
 
 tooltip>*>*,
