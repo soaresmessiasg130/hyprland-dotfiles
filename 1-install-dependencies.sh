@@ -4,7 +4,6 @@ packages=(
   cmake
   meson
   scdoc
-  libcava
   wayland-protocols
   gst-libav 
   gst-plugins-base 
@@ -58,7 +57,6 @@ packages=(
   zsh
   google-chrome
 
-  cava 
   swaync 
   hyprpaper 
   waypaper

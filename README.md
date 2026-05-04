@@ -35,7 +35,6 @@ A sleek, modern, and highly functional Hyprland configuration for Arch Linux, fe
 - **Launcher**: [Wofi](https://hg.sr.ht/~scoopta/wofi) for application searching and clipboard history.
 - **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/) with a customized theme.
 - **Notifications**: [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) for a modern notification center.
-- **Audio Visualizer**: [Cava](https://github.com/karlstav/cava) integrated into Waybar.
 - **Shell**: Zsh with [Oh My Zsh](https://ohmyz.sh/), [Powerlevel10k](https://github.com/romkatv/powerlevel10k), and syntax highlighting.
 - **Theme**: Catppuccin Mocha aesthetic across most components.
 - **Utilities**: `hyprlock` for locking, `hypridle` for power management, `grim`/`slurp` for screenshots, and `cliphist` for clipboard management.
